@@ -13,11 +13,12 @@ namespace MyFramework.Core.Aspects.Postsharp.LogAspects
 {
     //constuctor seviyesinde loglamayı engellemek için
     [Serializable]
-    [MulticastAttributeUsage(MulticastTargets.Method,TargetMemberAttributes = MulticastAttributes.Instance)]
-   public class LogAspect:OnMethodBoundaryAspect
+    [MulticastAttributeUsage(MulticastTargets.Method, TargetMemberAttributes = MulticastAttributes.Instance)]
+    //nesnelerin methodlarına uygula namespace ustunde yazmak ıstersek
+    public class LogAspect : OnMethodBoundaryAspect
     {
         private Type _loggerType;
-        private LoggerService _loggerService;
+        LoggerService _loggerService;
         public LogAspect(Type loggerType)
         {
             _loggerType = loggerType;
@@ -25,46 +26,54 @@ namespace MyFramework.Core.Aspects.Postsharp.LogAspects
 
         public override void RuntimeInitialize(MethodBase method)
         {
-            if (_loggerType.BaseType !=typeof(LoggerService))
+            if (_loggerType.BaseType != typeof(LoggerService))
             {
                 throw new Exception("Wrong logger type");
             }
 
-            _loggerService = (LoggerService) Activator.CreateInstance(_loggerType);
+            _loggerService = (LoggerService)Activator.CreateInstance(_loggerType);
             base.RuntimeInitialize(method);
         }
 
+
         public override void OnEntry(MethodExecutionArgs args)
         {
-            if (_loggerService.IsInfoEnabled)
+            //enable degılse
+            if (!_loggerService.IsInfoEnabled)
             {
                 return;
             }
 
             try
             {
-                //t tip i argumanlar (1. arguman 2.arguman gibi)
+                //t iteratir ise birinci ikinci arguman gibi
                 var logParameters = args.Method.GetParameters().Select((t, i) => new LogParameter
                 {
                     Name = t.Name,
                     Type = t.ParameterType.Name,
-                    Value = args.Arguments.GetArgument(i).ToString()
+                    Value = args.Arguments.GetArgument(i)
+
                 }).ToList();
 
+                //sınıf ve metgod simi gıbı namespace ıne  karsılık gelıyor
                 var logDetail = new LogDetail
                 {
                     FullName = args.Method.DeclaringType == null ? null : args.Method.DeclaringType.Name,
                     MethodName = args.Method.Name,
-                    Parameters = logParameters
+                    LogParameters = logParameters
                 };
 
+                //logdetaili kaydediyoruz
                 _loggerService.Info(logDetail);
-             
             }
             catch (Exception)
             {
-                
+
+
             }
+
+
+
         }
     }
 }

@@ -13,6 +13,7 @@ using MyFramework.DataAccess.Abstract;
 using MyFramework.Entities.Concrete;
 using MyFramework.Core.Aspects.Postsharp;
 using System.Transactions;
+using MyFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using MyFramework.Core.Aspects.Postsharp.CacheAspects;
 using MyFramework.Core.Aspects.Postsharp.LogAspects;
 using MyFramework.Core.Aspects.Postsharp.PerformanceAspects;
@@ -20,6 +21,7 @@ using MyFramework.Core.Aspects.Postsharp.TransactionAspects;
 using MyFramework.Core.Aspects.Postsharp.ValidationAspects;
 using MyFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using MyFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
+using PostSharp.Aspects.Dependencies;
 
 namespace MyFramework.Business.Concrete.Managers
 {
@@ -41,9 +43,10 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
+       [SecuredOperation(Roles="Admin")]
         public List<Product> GetAll()
        {
-           Thread.Sleep(3000);
+          // Thread.Sleep(3000);
           return _productDal.GetList();
        }
 

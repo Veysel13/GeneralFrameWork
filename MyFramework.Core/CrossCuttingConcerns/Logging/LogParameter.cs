@@ -10,6 +10,6 @@ namespace MyFramework.Core.CrossCuttingConcerns.Logging
     {
         public string Name { get; set; }
         public string Type { get; set; }
-        public string Value { get; set; }
+        public object Value { get; set; }
     }
 }
