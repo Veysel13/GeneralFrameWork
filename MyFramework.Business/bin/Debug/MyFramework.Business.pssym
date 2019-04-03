@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Symbols LinesOfCode="43" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.LogAspects.LogAspect">
-    <Instance Declaration="#2=A:MyFramework.Business" Id="87fef416d72ba77c">
+    <Instance Declaration="#2=A:MyFramework.Business" Id="87fef4168cf61af9">
       <Target Target="#3=M:[MyFramework.Business]MyFramework.Business.Concrete.Managers.ProductManager::GetAll()">
-        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="12" />
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry" Ordinal="12" />
       </Target>
       <Target Target="#5=M:[MyFramework.Business]MyFramework.Business.Concrete.Managers.ProductManager::Add(MyFramework.Entities.Concrete.Product)">
         <JoinPoint Advising="#1" Description="#4" Ordinal="25" />
@@ -18,7 +18,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="16" />
       </Target>
     </Instance>
-    <Instance Declaration="#2" Id="87fef4167d861a74">
+    <Instance Declaration="#2" Id="87fef416f0513652">
       <Target Target="#3">
         <JoinPoint Advising="#1" Description="#4" Ordinal="8" />
       </Target>
@@ -35,148 +35,144 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="17" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef416e7860e58">
+    <Instance Declaration="#3" Id="87fef4163b94a90b">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="9" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef416f559dcbe">
+    <Instance Declaration="#3" Id="87fef4169c98965a">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="10" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="87fef4161823e6b3">
+    <Instance Declaration="#5" Id="87fef416bb6f138e">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="24" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#9=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect">
-    <Instance Declaration="#2" Id="87fef41615cbb7f4">
+    <Instance Declaration="#2" Id="87fef41641d90330">
       <Target Target="#3">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="11" />
+        <JoinPoint Advising="#9" Description="#10=Wrapped by advice(s) OnEntry, OnExit" Ordinal="11" />
       </Target>
       <Target Target="#5">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="22" />
+        <JoinPoint Advising="#9" Description="#10" Ordinal="22" />
       </Target>
       <Target Target="#6">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="30" />
+        <JoinPoint Advising="#9" Description="#10" Ordinal="30" />
       </Target>
       <Target Target="#7">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="38" />
+        <JoinPoint Advising="#9" Description="#10" Ordinal="38" />
       </Target>
-      <Target Target="#10=M:[MyFramework.Business]MyFramework.Business.Concrete.Managers.ProductManager::#ctor(MyFramework.DataAccess.Abstract.IProductDal)">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="2" />
+      <Target Target="#11=M:[MyFramework.Business]MyFramework.Business.Concrete.Managers.ProductManager::#ctor(MyFramework.DataAccess.Abstract.IProductDal)">
+        <JoinPoint Advising="#9" Description="#10" Ordinal="2" />
       </Target>
       <Target Target="#8">
-        <JoinPoint Advising="#9" Description="#4" Ordinal="13" />
+        <JoinPoint Advising="#9" Description="#10" Ordinal="13" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef4168eba950e">
+    <Instance Declaration="#3" Id="87fef416b91f79fc">
       <Target>
-        <JoinPoint Advising="#9" Description="#4" Ordinal="4" />
+        <JoinPoint Advising="#9" Description="#10" Ordinal="4" />
       </Target>
     </Instance>
   </Class>
-  <Class Class="#11=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation">
-    <Instance Declaration="#3" Id="87fef41640c9ad4c">
+  <Class Class="#12=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation">
+    <Instance Declaration="#3" Id="87fef4167425713d">
       <Target>
-        <JoinPoint Advising="#11" Description="#4" Ordinal="5" />
+        <JoinPoint Advising="#12" Description="#4" Ordinal="5" />
       </Target>
     </Instance>
   </Class>
-  <Class Class="#12=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
-    <Instance Declaration="#5" Id="87fef4163f923867">
+  <Class Class="#13=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
+    <Instance Declaration="#5" Id="87fef4162732ee82">
       <Target>
-        <JoinPoint Advising="#12" Description="#4" Ordinal="20" />
+        <JoinPoint Advising="#13" Description="#4" Ordinal="20" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="87fef416a1c016ee">
+    <Instance Declaration="#6" Id="87fef416d08fbf7d">
       <Target>
-        <JoinPoint Advising="#12" Description="#4" Ordinal="27" />
+        <JoinPoint Advising="#13" Description="#4" Ordinal="27" />
       </Target>
     </Instance>
-    <Instance Declaration="#7" Id="87fef416b1855b11">
+    <Instance Declaration="#7" Id="87fef4160ba7ae5c">
       <Target>
-        <JoinPoint Advising="#12" Description="#4" Ordinal="32" />
-      </Target>
-    </Instance>
-  </Class>
-  <Class Class="#13=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
-    <Instance Declaration="#5" Id="87fef41632964e22">
-      <Target>
-        <JoinPoint Advising="#13" Description="#4" Ordinal="18" />
+        <JoinPoint Advising="#13" Description="#4" Ordinal="32" />
       </Target>
     </Instance>
   </Class>
-  <Class Class="#14=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
-    <Instance Declaration="#7" Id="87fef416537e4511">
+  <Class Class="#14=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
+    <Instance Declaration="#5" Id="87fef41667a82263">
       <Target>
-        <JoinPoint Advising="#14" Description="#4" Ordinal="34" />
+        <JoinPoint Advising="#14" Description="#15=Wrapped by advice(s) OnSuccess" Ordinal="18" />
       </Target>
     </Instance>
   </Class>
-  <Class Class="#15=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
-    <Instance Declaration="#2" Id="87fef4160626601b">
+  <Class Class="#16=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
+    <Instance Declaration="#7" Id="87fef41662a085e9">
+      <Target>
+        <JoinPoint Advising="#16" Description="#17=Wrapped by advice(s) OnEntry, OnSuccess, OnExit" Ordinal="34" />
+      </Target>
+    </Instance>
+  </Class>
+  <Class Class="#18=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
+    <Instance Declaration="#2" Id="87fef416e0c01a0c">
       <Target Target="#3">
-        <JoinPoint Advising="#15" Description="#16=Wrapped by advice(s) OnException" Ordinal="6" />
+        <JoinPoint Advising="#18" Description="#19=Wrapped by advice(s) OnException" Ordinal="6" />
       </Target>
       <Target Target="#5">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="21" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="21" />
       </Target>
       <Target Target="#6">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="28" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="28" />
       </Target>
       <Target Target="#7">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="35" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="35" />
       </Target>
-      <Target Target="#10">
-        <JoinPoint Advising="#15" Description="#16" />
+      <Target Target="#11">
+        <JoinPoint Advising="#18" Description="#19" />
       </Target>
       <Target Target="#8">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="15" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="15" />
       </Target>
     </Instance>
-    <Instance Declaration="#2" Id="87fef4169e4c0d1e">
+    <Instance Declaration="#2" Id="87fef416d4256807">
       <Target Target="#3">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="3" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="3" />
       </Target>
       <Target Target="#5">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="19" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="19" />
       </Target>
       <Target Target="#6">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="26" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="26" />
       </Target>
       <Target Target="#7">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="33" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="33" />
       </Target>
-      <Target Target="#10">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="0" />
+      <Target Target="#11">
+        <JoinPoint Advising="#18" Description="#19" Ordinal="0" />
       </Target>
       <Target Target="#8">
-        <JoinPoint Advising="#15" Description="#16" Ordinal="14" />
+        <JoinPoint Advising="#18" Description="#19" Ordinal="14" />
       </Target>
     </Instance>
   </Class>
-  <Class Class="#17=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
-    <Instance Declaration="#3" Id="87fef416a2418012">
+  <Class Class="#20=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
+    <Instance Declaration="#3" Id="87fef416ad0ce74b">
       <Target>
-        <JoinPoint Advising="#17" Description="#18=Intercepted by OnInvoke" Ordinal="7" />
+        <JoinPoint Advising="#20" Description="#21=Intercepted by OnInvoke" Ordinal="7" />
       </Target>
     </Instance>
   </Class>
-  <Annotation Target="#19=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20=2" Description="#21=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
-  <Annotation Target="#22=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#23=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#24=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#25=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect::OnException(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#26=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.LogAspects.LogAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#27=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#28=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#29=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#30=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnEntry([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#31=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#32=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#33=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
-  <Annotation Target="#34=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#20" Description="#21" />
+  <Annotation Target="#22=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23=2" Description="#24=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#25=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#26=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect::OnException(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#27=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.LogAspects.LogAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#28=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#29=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#30=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#31=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#32=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
+  <Annotation Target="#33=M:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect::OnExit(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#23" Description="#24" />
 </Symbols>

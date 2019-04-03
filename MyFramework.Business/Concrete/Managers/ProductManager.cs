@@ -43,7 +43,7 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles="Admin")]
+       [SecuredOperation(Roles="Admin,Editor")]
         public List<Product> GetAll()
        {
           // Thread.Sleep(3000);
