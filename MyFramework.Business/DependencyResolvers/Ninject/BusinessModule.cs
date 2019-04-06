@@ -11,6 +11,7 @@ using MyFramework.Core.DataAccess.EntityFramework;
 using MyFramework.Core.DataAccess.NHihabernate;
 using MyFramework.DataAccess.Abstract;
 using MyFramework.DataAccess.Concrete.EntityFramework;
+using MyFramework.DataAccess.Concrete.NHibernate;
 using MyFramework.DataAccess.Concrete.NHibernate.Helpers;
 using Ninject.Modules;
 
@@ -28,9 +29,9 @@ namespace MyFramework.Business.DependencyResolvers.Ninject
             Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
 
             //burdakiler standart kullandıgımız için gerekli
-            Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>)).InSingletonScope();
-            Bind<DbContext>().To<NorthwindContext>().InSingletonScope();
-            Bind<NHibernateHelper>().To<SqlServerHelper>().InSingletonScope();
+            Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
+            Bind<DbContext>().To<NorthwindContext>();
+            Bind<NHibernateHelper>().To<SqlServerHelper>();
         }
     }
 }

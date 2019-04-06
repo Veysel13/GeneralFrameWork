@@ -49,7 +49,9 @@
     <Compile Include="Concrete\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyFramework.Core\MyFramework.Core.csproj">
       <Project>{65CC4C16-213A-4266-9A72-EA256E9CB294}</Project>

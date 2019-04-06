@@ -11,9 +11,9 @@ using MyFramework.Entities.Concrete;
 
 namespace MyFramework.DataAccess.Concrete.NHibernate
 {
-   public class NhProductDal:NhEntittyRepositoryBase<Product>,IProductDal
-   {
-       private NHibernateHelper _nHibernateHelper;
+    public class NhProductDal : NhEntityRepositoryBase<Product>, IProductDal
+    {
+        private NHibernateHelper _nHibernateHelper;
         public NhProductDal(NHibernateHelper nHibernateHelper) : base(nHibernateHelper)
         {
             _nHibernateHelper = nHibernateHelper;
@@ -21,19 +21,20 @@ namespace MyFramework.DataAccess.Concrete.NHibernate
 
         public List<ProductDetail> GetProductDetails()
         {
-            using (var session= _nHibernateHelper.OpenSession())
+            using (var session = _nHibernateHelper.OpenSession())
             {
                 var result = from p in session.Query<Product>()
-                             join c in session.Query<Category>() on p.CategoryId equals c.CategoryId
+                    join c in session.Query<Category>() on p.CategoryId equals c.CategoryId
                     select new ProductDetail
                     {
                         ProductId = p.ProductId,
-                        ProductName = p.ProductName,
-                        CategoryName = c.CategoryName
+                        CategoryName = c.CategoryName,
+                        ProductName = p.ProductName
                     };
-                return result.ToList();
-            }
 
+                return result.ToList();
+
+            }
         }
     }
 }

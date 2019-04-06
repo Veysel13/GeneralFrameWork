@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MyFramework.Entities",
+    "\\MyFramework.Entities\\ComplexType",
+    "\\MyFramework.Entities\\Concrete"
   ],
   "SelectedNode": "\\MyFramework.sln",
   "PreviewInSolutionExplorer": false

@@ -9,7 +9,6 @@ namespace MyFramework.Core.DataAccess.NHihabernate
 {
   public  class NhQueryableRepository<T> : IQueryableRepository<T> where T : class, IEntity, new()
   {
-
       private NHibernateHelper _nHibernateHelper;
       private IQueryable<T> _entities;
 
@@ -17,22 +16,12 @@ namespace MyFramework.Core.DataAccess.NHihabernate
       {
           _nHibernateHelper = nHibernateHelper;
       }
-      public IQueryable<T> Table
-      {
-          get { return this.Entities; }
-      }
 
-      public IQueryable<T> Entities
-      {
-          get
-          {
-              if (_entities==null)
-              {
-                  _entities = _nHibernateHelper.OpenSession().Query<T>();
-              }
+      public IQueryable<T> Table => this.Entities;
 
-              return _entities;
-          }
+      public virtual IQueryable<T> Entities
+      {
+          get { return _entities ?? (_entities = _nHibernateHelper.OpenSession().Query<T>()); }
       }
     }
 }

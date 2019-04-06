@@ -1,0 +1,7 @@
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\bin\Debug\MyFramework.WcfService.dll.config
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\bin\Debug\MyFramework.WcfService.dll
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\bin\Debug\MyFramework.WcfService.pdb
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\obj\Debug\MyFramework.WcfService.csprojAssemblyReference.cache
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\obj\Debug\MyFramework.WcfService.csproj.CoreCompileInputs.cache
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\obj\Debug\MyFramework.WcfService.dll
+C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WcfService\obj\Debug\MyFramework.WcfService.pdb

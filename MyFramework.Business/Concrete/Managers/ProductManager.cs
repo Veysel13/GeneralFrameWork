@@ -43,12 +43,20 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles="Admin,Editor,Student")]
+       //[SecuredOperation(Roles="Admin,Editor,Student")]
         public List<Product> GetAll()
        {
           // Thread.Sleep(3000);
-          return _productDal.GetList();
-       }
+          //return _productDal.GetList();
+            return _productDal.GetList().Select(p => new Product()
+            {
+                CategoryId = p.CategoryId,
+                ProductId = p.ProductId,
+                ProductName = p.ProductName,
+                QuantityPerUnit = p.QuantityPerUnit,
+                UnitPrice = p.UnitPrice
+            }).ToList();
+        }
 
         public Product GetById(int id)
         {

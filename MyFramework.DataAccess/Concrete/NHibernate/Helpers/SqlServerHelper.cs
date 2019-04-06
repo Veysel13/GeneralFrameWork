@@ -14,19 +14,15 @@ namespace MyFramework.DataAccess.Concrete.NHibernate.Helpers
     //nhbirnate paketinin eklenmesi gerekiyor
     //fluentnhibernate paketinin de yüklenmesi gerekiyor
     //Entitlerimin virtual imzalı olması gerkiyor nhbirnate de
-    public class SqlServerHelper:NHibernateHelper
+    public class SqlServerHelper : NHibernateHelper
     {
-        protected override ISessionFactory InitializerFactory()
+        protected override ISessionFactory InitializeFactory()
         {
+
             return Fluently.Configure().Database(MsSqlConfiguration.MsSql2012
-                .ConnectionString(c=>c.FromConnectionStringWithKey("NorthwindContext")))
-                .Mappings(t=>t.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
-                .BuildSessionFactory();
-           
-            /*return Fluently.Configure().Database(OracleClientConfiguration.Oracle10
                     .ConnectionString(c => c.FromConnectionStringWithKey("NorthwindContext")))
                 .Mappings(t => t.FluentMappings.AddFromAssembly(Assembly.GetExecutingAssembly()))
-                .BuildSessionFactory();*/
+                .BuildSessionFactory();
         }
     }
 }
