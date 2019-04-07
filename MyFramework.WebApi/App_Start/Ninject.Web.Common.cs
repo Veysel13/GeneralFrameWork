@@ -68,7 +68,8 @@ namespace MyFramework.WebApi.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             //business katmanýnda yukledýgýmýz classý entengre edýyoruz
-            kernel.Load(new BusinessModule());
+            //ayrýeten auto mapper ýmpletasyonu ýcýn yazdýgýmýz nýnject modulunu de verýyoruz
+            kernel.Load(new BusinessModule(),new AutoMapperModule());
         }        
     }
 }

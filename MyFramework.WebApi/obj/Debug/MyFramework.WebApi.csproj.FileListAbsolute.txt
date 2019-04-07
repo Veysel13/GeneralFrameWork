@@ -140,3 +140,8 @@ C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\ru\
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\sv\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\tr\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\zh-CN\FluentValidation.resources.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\AutoMapper.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\System.ValueTuple.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\AutoMapper.pdb
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\AutoMapper.xml
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.WebApi\bin\System.ValueTuple.xml

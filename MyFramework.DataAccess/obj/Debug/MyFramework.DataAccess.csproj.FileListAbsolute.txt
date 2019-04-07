@@ -168,3 +168,8 @@ C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\sv\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\tr\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\AutoMapper.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\System.ValueTuple.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\AutoMapper.pdb
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\AutoMapper.xml
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\System.ValueTuple.xml

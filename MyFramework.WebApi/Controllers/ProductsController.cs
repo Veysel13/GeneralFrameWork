@@ -19,7 +19,7 @@ namespace MyFramework.WebApi.Controllers
         //app startın altında yenı nınject web common clası eklenecek orda configurasyonlar yapılmalı
 
         //bilgilerin serilestirme hatası gelmektedir.Entity fremawork de
-        //bu problemi automapper ile çozuoyoruz
+        //bu problemi automapper ile çozuoyoruz(nuget paket den ındırıyoruz business katmanına)
         private IProductService _productService;
 
         public ProductsController(IProductService productService)

@@ -146,3 +146,8 @@ C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\D
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\sv\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\tr\FluentValidation.resources.dll
 C:\Users\veyse\Source\Repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\zh-CN\FluentValidation.resources.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\AutoMapper.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\System.ValueTuple.dll
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\AutoMapper.pdb
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\AutoMapper.xml
+C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Entities\bin\Debug\System.ValueTuple.xml
