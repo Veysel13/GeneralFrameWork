@@ -22,9 +22,9 @@ namespace MyFramework.Business.Tests
         public void Product_validation_check()
         {
             //bize bir iproductDal vermesini soyledik
-            Mock<IProductDal> mock = new Mock<IProductDal>();
-            ProductManager productManager=new ProductManager(mock.Object);
-            productManager.Add(new Product());
+            //Mock<IProductDal> mock = new Mock<IProductDal>();
+            //ProductManager productManager=new ProductManager(mock.Object);
+            //productManager.Add(new Product());
         }
     }
 }

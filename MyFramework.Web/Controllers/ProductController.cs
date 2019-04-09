@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyFramework.Business.Abstract;
 using MyFramework.Entities.Concrete;
-using MyFramework.Web.Models;
+using MyFramework.Web.Models.ViewModel;
 
 namespace MyFramework.Web.Controllers
 {
@@ -23,10 +23,8 @@ namespace MyFramework.Web.Controllers
 
         public ActionResult Index()
         {
-            var model = new ProductListViewModel
-            {
-                Products = _productService.GetAll()
-            };
+            var model = new ProductListViewModel();
+            model.Products = _productService.GetAll();
             return View(model);
         }
 
