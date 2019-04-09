@@ -9,7 +9,7 @@ using MyFramework.Entities.Concrete;
 
 namespace MyFramework.DataAccess.Concrete.NHibernate
 {
-   public class NhCategoryDal:NhEntittyRepositoryBase<Category>,ICategoryDal
+   public class NhCategoryDal:NhEntityRepositoryBase<Category>,ICategoryDal
     {
         public NhCategoryDal(NHibernateHelper nHibernateHelper) : base(nHibernateHelper)
         {

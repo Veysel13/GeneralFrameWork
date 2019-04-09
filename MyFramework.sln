@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.Web.Tests", "My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.WebApi", "MyFramework.WebApi\MyFramework.WebApi.csproj", "{99B935A9-5F89-4567-8667-A3A831D5ED30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFramework.WcfService", "MyFramework.WcfService\MyFramework.WcfService.csproj", "{C1A20DCB-1545-400F-957C-B1088093BA9C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,10 +63,6 @@ Global
 		{99B935A9-5F89-4567-8667-A3A831D5ED30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99B935A9-5F89-4567-8667-A3A831D5ED30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99B935A9-5F89-4567-8667-A3A831D5ED30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1A20DCB-1545-400F-957C-B1088093BA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1A20DCB-1545-400F-957C-B1088093BA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1A20DCB-1545-400F-957C-B1088093BA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1A20DCB-1545-400F-957C-B1088093BA9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

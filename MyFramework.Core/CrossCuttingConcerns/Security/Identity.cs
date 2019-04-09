@@ -14,7 +14,7 @@ namespace MyFramework.Core.CrossCuttingConcerns.Security
         public string AuthenticationType { get; set; }
         public bool IsAuthenticated { get; set; }
 
-        //kendi ozelliklerim
+        //kendi ozelliklerimm
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

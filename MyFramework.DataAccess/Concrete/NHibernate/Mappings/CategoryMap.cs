@@ -16,7 +16,7 @@ namespace MyFramework.DataAccess.Concrete.NHibernate.Mappings
             LazyLoad();
             Id(x => x.CategoryId).Column("CategoryID");
 
-            Map(x => x.CategoryId).Column("CategoryID");
+           
             Map(x => x.CategoryName).Column("CategoryName");
           
         }

@@ -13,6 +13,7 @@ using MyFramework.DataAccess.Abstract;
 using MyFramework.Entities.Concrete;
 using MyFramework.Core.Aspects.Postsharp;
 using System.Transactions;
+using AutoMapper;
 using MyFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using MyFramework.Core.Aspects.Postsharp.CacheAspects;
 using MyFramework.Core.Aspects.Postsharp.LogAspects;
@@ -22,6 +23,7 @@ using MyFramework.Core.Aspects.Postsharp.ValidationAspects;
 using MyFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using MyFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
 using PostSharp.Aspects.Dependencies;
+using MyFramework.Core.Utilities.Mappings;
 
 namespace MyFramework.Business.Concrete.Managers
 {
@@ -29,25 +31,47 @@ namespace MyFramework.Business.Concrete.Managers
     //postsharp ın 4.2.17 versiyonunu kuruyoruz
     //manager ustunde bunların calısmasını saglayabılırız
     //yada tım managerların loglanmasını ıstıyorsak busıness altındakı propertıesın ıcındekı assmblyınfo ıcıne eklıyoruz
+    //bu problemi automapper ile çozuoyoruz(nuget paket den ındırıyoruz business katmanına)
     public class ProductManager:IProductService
    {
        //dependency injection yaptık
        private IProductDal _productDal;
+       private IMapper _mapper { get; }
 
-       public ProductManager(IProductDal productDal)
+        public ProductManager(IProductDal productDal,IMapper mapper)
        {
            _productDal = productDal;
-       }
+           _mapper = mapper;
+        }
 
        [CacheAspect(typeof(MemoryCacheManager))]
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles="Admin")]
+       [SecuredOperation(Roles="Admin,Editor,Student")]
         public List<Product> GetAll()
        {
-          // Thread.Sleep(3000);
-          return _productDal.GetList();
+            // Thread.Sleep(3000);
+            //return _productDal.GetList();
+            //return _productDal.GetList().Select(p => new Product()
+            //{
+            //    CategoryId = p.CategoryId,
+            //    ProductId = p.ProductId,
+            //    ProductName = p.ProductName,
+            //    QuantityPerUnit = p.QuantityPerUnit,
+            //    UnitPrice = p.UnitPrice
+            //}).ToList();
+
+            //Mapper.Initialize(x => { x.CreateMap<Product, Product>(); });
+            //List<Product> products = Mapper.Map<List<Product>, List<Product>>(_productDal.GetList());
+            //return products;
+
+            //core daki yapı
+            //var result = AutoMapperHelper.MapToSameTypeList(_productDal.GetList());
+            //business dayazdıgımız nınject map yapısı
+            var result = _mapper.Map<List<Product>>(_productDal.GetList());
+
+            return result;
        }
 
         public Product GetById(int id)
