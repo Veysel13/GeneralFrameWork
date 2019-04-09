@@ -192,3 +192,4 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Core\bin\Debug\ru\FluentValidation.
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\bin\Debug\sv\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\bin\Debug\tr\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\bin\Debug\zh-CN\FluentValidation.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.csprojAssemblyReference.cache

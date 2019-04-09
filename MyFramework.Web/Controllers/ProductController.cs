@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MyFramework.Business.Abstract;
 using MyFramework.Entities.Concrete;
+using MyFramework.Web.Filters;
+using MyFramework.Web.Infrastructure;
 using MyFramework.Web.Models.ViewModel;
 
 namespace MyFramework.Web.Controllers
@@ -13,7 +15,8 @@ namespace MyFramework.Web.Controllers
     //controllerin consruct üretmek için Core katmanında Utilities kısmını yazmam gerekir
     //daha sonra global.assax da bunu belirmemiz gerekir.
     //ninject paktinide kurulması gerekiyor
-    public class ProductController : Controller
+    [AuthorizationFilter]
+    public class ProductController : BaseController
     {
         private IProductService _productService;
         public ProductController(IProductService productService)
@@ -27,7 +30,12 @@ namespace MyFramework.Web.Controllers
             model.Products = _productService.GetAll();
             return View(model);
         }
+        public ActionResult Deneme()
+        {
+           
 
+            return View();
+        }
         public string Add()
         {
             _productService.Add(new Product
@@ -45,13 +53,13 @@ namespace MyFramework.Web.Controllers
             _productService.TransactionalOperation(new Product
             {
                 CategoryId = 1,
-                ProductName = "aa",
+                ProductName = "cc",
                 QuantityPerUnit = "1",
-                UnitPrice = 21
+                UnitPrice = 3
             }, new Product
             {
                 CategoryId = 1,
-                ProductName = "aa",
+                ProductName = "cc",
                 QuantityPerUnit = "1",
                 UnitPrice = 33,
                 ProductId = 2

@@ -1,0 +1,18 @@
+﻿@if (TempData["mesaj"] != null)
+{
+<div class="alert-danger">@Html.Raw(TempData["mesaj"]) </div>
+}
+    <div class="container" style="margin-top: 100px">
+        <div class="row">
+            <div class="col-md-12">
+                <form action="@Url.Action("SignIn", "Account")" method="post">
+                    <input type="text" name="username" class="form-control" />
+                    <input type="text" name="password" class="form-control" />
+                    <button type="submit">Kayıtol</button>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+    

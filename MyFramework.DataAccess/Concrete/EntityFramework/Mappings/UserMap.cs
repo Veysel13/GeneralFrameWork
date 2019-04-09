@@ -21,6 +21,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.LastName).HasColumnName("LastName");
             Property(x => x.Email).HasColumnName("Email");
             Property(x => x.Password).HasColumnName("Password");
+            Property(x => x.IsActive).HasColumnName("IsActive");
 
         }
     }

@@ -101,3 +101,4 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Web.Tests\obj\Debug\MyFramework.Web
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web.Tests\obj\Debug\MyFramework.Web.Tests.csproj.CopyComplete
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web.Tests\obj\Debug\MyFramework.Web.Tests.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web.Tests\obj\Debug\MyFramework.Web.Tests.pdb
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web.Tests\obj\Debug\MyFramework.Web.Tests.csprojAssemblyReference.cache
