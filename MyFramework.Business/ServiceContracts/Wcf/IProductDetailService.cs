@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyFramework.Business.ServiceContracts.Wcf
 {
+    //service olabilmesi için  gerekli attribute
     [ServiceContract]
   public  interface IProductDetailService
     {

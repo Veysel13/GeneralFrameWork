@@ -1,0 +1,20 @@
+﻿
+@model Product
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Ürün Ekleme"))
+{
+    using (Html.BeginForm(Url.Action("Add", "Product")))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "w3-text-red" })
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.ProductName, "Ürün İsmi", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", placeholder = "Ürün İsmi Giriniz" })
+        </div>
+    }
+
+}

@@ -28,6 +28,8 @@ namespace MyFramework.Business.DependencyResolvers.Ninject
             Bind<IUserService>().To<UserManager>().InSingletonScope();
             Bind<IUserDal>().To<EfUserDal>().InSingletonScope();
 
+            Bind<ISupplierService>().To<SupplierManager>().InSingletonScope();
+            Bind<ISupplierDal>().To<EfSupplierDal>().InSingletonScope();
             //burdakiler standart kullandıgımız için gerekli
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>();

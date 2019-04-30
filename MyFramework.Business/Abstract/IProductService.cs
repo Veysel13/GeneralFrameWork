@@ -5,9 +5,11 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
+using MyFramework.Entities.ComplexType;
 
 namespace MyFramework.Business.Abstract
 {
+    //service olabilmesi için
     [ServiceContract]
    public interface IProductService
    {
@@ -19,7 +21,11 @@ namespace MyFramework.Business.Abstract
         Product Add(Product product);
         [OperationContract]
         Product Update(Product product);
+       [OperationContract]
+        void Delete(Product product);
         [OperationContract]
         void TransactionalOperation(Product product1,Product product2);
+        [OperationContract]
+        List<ProductDetail> GetListProductDetails();
    }
 }

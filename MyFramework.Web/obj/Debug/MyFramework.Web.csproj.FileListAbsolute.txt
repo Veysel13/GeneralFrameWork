@@ -378,3 +378,7 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\ru\FluentValidation.resourc
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\sv\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\tr\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\zh-CN\FluentValidation.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\Mvc.Grid.Core.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\TenTec.Windows.iGridLib.iGrid.v4.6.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.iGrid Sample VB.resources
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.csproj.GenerateResource.cache

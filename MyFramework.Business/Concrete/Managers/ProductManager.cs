@@ -24,6 +24,7 @@ using MyFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using MyFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
 using PostSharp.Aspects.Dependencies;
 using MyFramework.Core.Utilities.Mappings;
+using MyFramework.Entities.ComplexType;
 
 namespace MyFramework.Business.Concrete.Managers
 {
@@ -52,7 +53,7 @@ namespace MyFramework.Business.Concrete.Managers
         public List<Product> GetAll()
        {
             // Thread.Sleep(3000);
-            //return _productDal.GetList();
+          
             //return _productDal.GetList().Select(p => new Product()
             //{
             //    CategoryId = p.CategoryId,
@@ -123,5 +124,15 @@ namespace MyFramework.Business.Concrete.Managers
             }*/
           
        }
-   }
+
+       public List<ProductDetail> GetListProductDetails()
+       {
+          return _productDal.GetProductDetails();
+       }
+
+        public void Delete(Product product)
+        {
+            _productDal.Delete(product);
+        }
+    }
 }

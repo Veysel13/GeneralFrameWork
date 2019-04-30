@@ -1,23 +1,23 @@
-﻿@using MyFramework.Web.Models.ViewModel
-@model ProductListViewModel
-@{
-    Layout = null;
-}
+﻿@model ProductListViewModel
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-<div>
-    @foreach (var product in Model.Products)
+@using (Html.BeginCard("Product List"))
+{
+    @HtmlComponents.NewAddButtonComponent(Url.Action("Create","Product"))
+    using (Html.BeginTable(new[] { "Ürün İsmi", "Ürün Fiyatı","Kategory İsmi","Şirket İsmi" ,"" }))
     {
-        @product.ProductName
-        <br/>
+        foreach (var item in Model.Products)
+        {
+            <tr>
+                <th>@item.ProductName</th>
+                <th>@item.UnitPrice</th>
+                <th>@item.CategoryName</th>
+                <th>@item.CompanyName</th>
+                <th>
+                    @HtmlComponents.DetailButtonComponent(Url.Action("Update", new { id = item.ProductId }))
+                    @HtmlComponents.DeleteButtonComponent(Url.Action("Delete", new { id = item.ProductId }))
+                </th>
+            </tr>
+
+        }
     }
-</div>
-</body>
-</html>
+}

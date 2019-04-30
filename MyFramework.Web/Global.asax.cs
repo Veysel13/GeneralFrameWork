@@ -10,6 +10,7 @@ using System.Web.Security;
 using MyFramework.Business.DependencyResolvers.Ninject;
 using MyFramework.Core.CrossCuttingConcerns.Security.Web;
 using MyFramework.Core.Utilities.Mvc.Infrastructure;
+using MyFramework.Web.App_Start;
 
 namespace MyFramework.Web
 {
@@ -19,6 +20,7 @@ namespace MyFramework.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule(),new AutoMapperModule()));
         }

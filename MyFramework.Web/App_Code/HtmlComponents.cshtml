@@ -1,0 +1,180 @@
+﻿@helper TextViewComponent(string label, string value)
+{
+    <div class="form-group">
+        <label>@label</label>
+        <input type="email" class="form-control" readonly="readonly" value="@value">
+    </div>
+}
+
+
+@helper TextAreaViewComponent(string label, string value)
+{
+    <div class="form-group">
+        <label>@label</label>
+        <textarea class="form-control" cols="30" rows="10" readonly="readonly">@value</textarea>
+    </div>
+}
+
+@helper LightBoxImage(string itemPath, string column = "col-lg-4 col-md-4 col-sm-12 col-xs-12")
+{
+    <div class="@column galeriImage">
+        <a href="@itemPath" data-lightbox="image-1">
+            <img src="@itemPath" class="img-responsive" />
+        </a>
+    </div>
+}
+
+
+
+@*     Inputlar                       *@
+@helper TextInputComponent(string name, string label, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <input type="text" class="form-control" id="@name" name="@name" placeholder="@placeHolder" value="@value">
+    </div>
+}
+
+@helper EmailInputComponent(string name, string label, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <input type="email" class="form-control" id="@name" name="@name" placeholder="@placeHolder" value="@value">
+    </div>
+}
+
+@helper TextAreaInputComponent(string name, string label, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <textarea id="@name" name="@name" class="form-control" rows="10" cols="40">@value</textarea>
+    </div>
+}
+
+@helper NumberInputComponent(string name, string label, int? value = 0, string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <input type="number" class="form-control" id="@name" name="@name" placeholder="@placeHolder" value="@value">
+    </div>
+}
+
+
+@helper PhoneInputComponent(string name, string label, int? value = 0, string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <input type="tel" class="form-control" id="@name" name="@name" placeholder="@placeHolder" value="@value">
+    </div>
+}
+
+@helper SelectInputComponent(string name, string label, List<KeyValuePair<string, string>> secenekeler = null, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <select class="form-control" id="@name" name="@name" placeholder="@placeHolder">
+            @if (secenekeler != null)
+            {
+                foreach (var item in secenekeler)
+                {
+                    <option value="@item.Key" @(item.Key == value && value != "" ? "selected=\"selected\"" : "")>@item.Value</option>
+                }
+            }
+        </select>
+    </div>
+}
+
+
+@helper SelectInputSingleComponent(string name, string label, List<KeyValuePair<int, string>> secenekeler, int id = 0, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <select class="form-control" id="@name" name="@name" placeholder="@placeHolder">
+            @if (secenekeler != null)
+            {
+                <option value="0">Oda Tipi Şeçiniz</option>
+                foreach (var item in secenekeler)
+                {
+                    <option value="@item.Key" @(item.Key == id && id != 0 ? "selected=\"selected\"" : "")>@item.Value</option>
+                }
+            }
+        </select>
+    </div>
+}
+
+@helper FileInputComponent(string name, string label, string placeHolder = "")
+{
+    <div class="form-group">
+        <label>File input</label>
+        <input id="@name" class="file" name="@name" type="file">
+
+        <p class="help-block">Lütfen sadece resim yükleyin.</p>
+    </div>
+}
+
+@helper FileInputMultipleComponent(string name, string label, string placeHolder = "")
+{
+    <div class="form-group">
+        <label>File input</label>
+        <input id="file-0" class="file" name="@name" type="file" multiple="true" required="required">
+
+        <p class="help-block">Lütfen sadece resim yükleyin.</p>
+    </div>
+}
+
+@helper DateInputComponent(string name, string label, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label>@label</label>
+        <input class="form-control default-date-picker" size="16" type="text" id="@name" name="@name" placeholder="@placeHolder" value="@value" />
+        <span class="help-block">Tarih Seçin</span>
+    </div>
+}
+
+@helper SubmitComponent(string text)
+{
+    <button type="submit" class="btn btn-info">@text</button>
+}
+
+@helper BackButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-default"><i class="fa fa-arrow-left"></i> Geri Dön</a>
+}
+@helper EditButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+}
+@helper DetailButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-primary"><i class="fa fa-search"></i></a>
+}
+@helper DeleteButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-danger"><i class="fa fa-remove"></i></a>
+}
+@helper NewAddButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-success btn-lg btn-block">Yeni Ekle</a>
+}
+
+@helper UpdateButtonComponent(string url)
+{
+    <a href="@url" class="btn btn-primary btn-lg btn-block">Güncelle</a>
+}
+@helper DegreeComponent(int degree)
+{
+    int k = degree % 2;
+    int c = 10 - degree - 1;
+    for (int i = 1; i < degree; i += 2)
+    {
+        <i class="fa fa-circle"></i>
+    }
+    if (k == 1)
+    {
+        <i class="fa fa-dot-circle"></i>
+    }
+    for (int i = 0; i < c; i += 2)
+    {
+        <i class="fa fa-circle" style="opacity: 0;"></i>
+    }
+}

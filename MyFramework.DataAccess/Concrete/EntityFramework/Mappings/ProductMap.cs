@@ -20,6 +20,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.ProductId).HasColumnName("ProductID");
             Property(x => x.ProductName).HasColumnName("ProductName");
             Property(x => x.CategoryId).HasColumnName("CategoryID");
+            Property(x => x.SupplierId).HasColumnName("SupplierID");
             Property(x => x.QuantityPerUnit).HasColumnName("QuantityPerUnit");
             Property(x => x.UnitPrice).HasColumnName("UnitPrice");
             

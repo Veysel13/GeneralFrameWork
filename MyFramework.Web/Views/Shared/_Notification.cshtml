@@ -1,5 +1,4 @@
 ﻿@using MyFramework.Core.Utilities.Mvc.Enums
-@using MyFramework.Web.Localize
 @{
     //success messages
     var successMessages = new List<string>();
@@ -27,12 +26,17 @@
         errorMessages.Add(ViewData[string.Format("MyFramework.notifications.{0}", NotifyType.Error)].ToString());
     }
 }
+<script src="~/assets/js/jquery-1.10.2.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
 @foreach (var message in successMessages)
 {
     <script type="text/javascript">
 
         $(document).ready(function() {
-            displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'success');
+           // displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'success');
+           // swal("Başarılı", '@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', "success");
+            alertify.set('notifier','position', 'top-right');
+            alertify.success('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))');
         });
 
     </script>
@@ -41,12 +45,18 @@
 {
     <script type="text/javascript">
 
-        $(document).ready(function() {
-            displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'error');
+        $(document).ready(function () {
+          //  swal("Başarısız", '@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', "error");
+            // displayNotification('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))', 'error');
+            alertify.set('notifier','position', 'top-right');
+            alertify.error('@Html.Raw(HttpUtility.JavaScriptStringEncode(message))');
         });
 
     </script>
 }
+<!-- JavaScript -->
+
+
 <div id="dialog-notifications-success" style="display: none;" class="alert alert-success alert-dismissible" role="alert">
     <a class="close" onclick="$('#dialog-notifications-success').hide()">×</a>
     <span class="mesaj"></span>
@@ -60,7 +70,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">@*@Word("Basari")*@</h4>
+                <h4 class="modal-title" id="myModalLabel">@Word("Basari")</h4>
             </div>
             <div class="modal-body">
             </div>

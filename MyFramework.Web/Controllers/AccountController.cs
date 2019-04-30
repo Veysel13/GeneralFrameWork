@@ -59,7 +59,7 @@ namespace MyFramework.Web.Controllers
                 false,
                 user.FirstName,
                 user.LastName);
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Anasayfa");
             }
             return Redirect("NotAuthorization");
         }

@@ -1,0 +1,28 @@
+﻿
+@model SupplierListViewModel
+@{
+    ViewBag.Title = "Satıcı Listesi";
+}
+
+@using (Html.BeginCard("Satıcı Listesi"))
+{
+    @HtmlComponents.NewAddButtonComponent(Url.Action("Create", "Supplier"))
+    using (Html.BeginTable(new[] { "Satıcı İsmi", "Bağlantı İsmi", "Telefon", "" }))
+    {
+        foreach (var item in Model.Suppliers)
+        {
+            <tr>
+                <th>@item.CompanyName</th>
+                <th>@item.ContactName</th>
+                <th>@item.Phone</th>
+                <th>
+                    @HtmlComponents.DetailButtonComponent(Url.Action("Update", new { id = item.SupplierId }))
+                    @HtmlComponents.DeleteButtonComponent(Url.Action("Delete", new { id = item.SupplierId }))
+                </th>
+            </tr>
+        }
+    }
+}
+
+
+

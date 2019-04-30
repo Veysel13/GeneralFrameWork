@@ -19,11 +19,14 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
             {
                 var result = from p in context.Products
                     join c in context.Categories on p.CategoryId equals c.CategoryId
-                    select new ProductDetail
+                    join s in context.Suppliers on p.SupplierId equals s.SupplierId
+                             select new ProductDetail
                     {
                         ProductId = p.ProductId,
                         ProductName = p.ProductName,
-                        CategoryName = c.CategoryName
+                        UnitPrice=p.UnitPrice,
+                        CategoryName = c.CategoryName,
+                        CompanyName = s.CompanyName
                     };
                 return result.ToList();
             }

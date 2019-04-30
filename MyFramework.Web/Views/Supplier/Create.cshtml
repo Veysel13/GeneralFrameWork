@@ -1,0 +1,63 @@
+﻿
+@model Supplier
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Product Create"))
+{
+    using (Html.BeginForm(Url.Action("Create", "Supplier")))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "w3-text-red" })
+
+        <div class="form-group">
+            @Html.LabelFor(x => x.CompanyName, "Şirket İsmi", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control", placeholder = "Şirket İsmi" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.ContactName, "İletişim İsmi", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.ContactName, new { @class = "form-control", placeholder = "iletişim İsmi" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.ContactTitle, "İletişim Başlığı", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.ContactTitle, new { @class = "form-control", placeholder = "İletişim Başkığı" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Address, "Adres", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.Address, new { @class = "form-control", placeholder = "" +
+                                                                                          "adres" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.City, "Şehir", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.City, new { @class = "form-control", placeholder = "Şehir" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Region, "Bölge", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.Region, new { @class = "form-control", placeholder = "Bölge" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.PostalCode, "Posta Kodu", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.PostalCode, new { @class = "form-control", placeholder = "Posta Kodu" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Country, "Ülke", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.Country, new { @class = "form-control", placeholder = "Ülke" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Phone, "Telefon", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", placeholder = "Telefon" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Fax, "Fax", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.Fax, new { @class = "form-control", placeholder = "Fax" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.HomePage, "Ana Sayfa", new { @for = "exampleInputEmail1" })
+            @Html.TextBoxFor(x => x.HomePage, new { @class = "form-control", placeholder = "Ana Sayfa" })
+        </div>
+
+        @HtmlComponents.SubmitComponent("Ekle");
+    }
+
+}
