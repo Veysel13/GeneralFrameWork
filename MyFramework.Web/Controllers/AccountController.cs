@@ -50,6 +50,7 @@ namespace MyFramework.Web.Controllers
            
             var user = _userService.GetByUserNameAndPassword(TempData["userName"].ToString(),
                 TempData["password"].ToString());
+            var link = _userService.GetUserRoleItems(user);
             if (user!=null &&user.IsActive==true)
             {
                  AuthenticationHelper.CreateAuthCookie(new Guid(),

@@ -18,7 +18,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
             {
                 var result = from ur in context.UserRoles
                     join r in context.Roles
-                        on ur.Id equals user.Id
+                        on ur.Id equals r.Id
                     where ur.UserId == user.Id
                     select new UserRoleItem
                     {

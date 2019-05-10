@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyFramework.Business.Abstract;
+using MyFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using MyFramework.Entities.Concrete;
 using MyFramework.Web.Filters;
 using MyFramework.Web.Infrastructure;
@@ -16,7 +17,7 @@ namespace MyFramework.Web.Controllers
     //controllerin consruct üretmek için Core katmanında Utilities kısmını yazmam gerekir
     //daha sonra global.assax da bunu belirmemiz gerekir.
     //ninject paktinide kurulması gerekiyor
-    //[ExceptionFilter]
+    [ExceptionFilter]
     [AuthorizationFilter]
    public class ProductController : BaseController
     {

@@ -15,7 +15,6 @@ namespace MyFramework.Business.Concrete.Managers
 {
     [LogAspect(typeof(DatabaseLogger))]
     [LogAspect(typeof(FileLogger))]
-    [SecuredOperation(Roles = "SystemAdmin,Admin")]
     public class RootPointManager : IRootPointService
     {
         private IRootPointDal _rootPointDal;

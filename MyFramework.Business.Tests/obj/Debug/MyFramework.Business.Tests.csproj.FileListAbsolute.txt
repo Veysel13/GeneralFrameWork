@@ -1,7 +1,5 @@
 C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csprojAssemblyReference.cache
 C:\Users\veyse\source\repos\Veysel13\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csproj.CoreCompileInputs.cache
-D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csprojAssemblyReference.cache
-D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csproj.CoreCompileInputs.cache
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -187,6 +185,8 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\sv\FluentV
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\tr\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\zh-CN\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\bin\Debug\MyFramework.Business.Tests.pssym
+D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csprojAssemblyReference.cache
+D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csproj.CoreCompileInputs.cache
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.csproj.CopyComplete
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.dll.postsharp
 D:\Visualstudio\GeneralFrameWork\MyFramework.Business.Tests\obj\Debug\MyFramework.Business.Tests.dll

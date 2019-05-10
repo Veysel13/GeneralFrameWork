@@ -21,8 +21,7 @@ namespace MyFramework.Business.Concrete.Managers
 {
     [LogAspect(typeof(DatabaseLogger))]
     [LogAspect(typeof(FileLogger))]
-    [SecuredOperation(Roles = "SystemAdmin,Admin")]
-    public class SupplierManager:ISupplierService
+  public class SupplierManager:ISupplierService
    {
        private ISupplierDal _supplierDal;
        private IMapper _mapper { get; }
@@ -36,8 +35,7 @@ namespace MyFramework.Business.Concrete.Managers
        [CacheAspect(typeof(MemoryCacheManager))]
        [LogAspect(typeof(DatabaseLogger))]
        //[LogAspect(typeof(FileLogger))]
-       [SecuredOperation(Roles = "SystemAdmin,Admin")]
-        public List<Supplier> GetAll()
+     public List<Supplier> GetAll()
         {
           return _mapper.Map<List<Supplier>>(_supplierDal.GetList());
         }

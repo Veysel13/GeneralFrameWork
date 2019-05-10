@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using MyFramework.Business.Abstract;
 using MyFramework.Entities.Concrete;
+using MyFramework.Web.Filters;
 using MyFramework.Web.Infrastructure;
 using MyFramework.Web.Models.ViewModel;
 
 namespace MyFramework.Web.Controllers
 {
+    [ExceptionFilter]
+    [AuthorizationFilter]
     public class CategoryController : BaseController
     {
         private ICategoryService _categoryService;

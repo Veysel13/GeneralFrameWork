@@ -21,7 +21,6 @@ namespace MyFramework.Business.Concrete.Managers
 {
     [LogAspect(typeof(DatabaseLogger))]
     [LogAspect(typeof(FileLogger))]
-    [SecuredOperation(Roles = "SystemAdmin,Admin")]
     public class CategoryManager:ICategoryService
    {
        private IFileUploadService _fileUploadService;

@@ -124,7 +124,7 @@ namespace MyFramework.Business.Concrete.Managers
           
        }
        [CacheAspect(typeof(MemoryCacheManager))]
-       //[SecuredOperation(Roles ="Admin,Student")]
+       [SecuredOperation(Roles ="Student,Admin")]
         public List<ProductDetail> GetListProductDetails()
        {
           return _productDal.GetProductDetails();
