@@ -1,0 +1,29 @@
+﻿
+@model Supplier
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Product Create"))
+{
+    using (Html.BeginForm(Url.Action("Update", "Supplier")))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "w3-text-red" })
+
+        @HtmlComponents.TextInputComponent("CompanyName", "Şirket İsmi",Model.CompanyName)
+        @HtmlComponents.TextInputComponent("ContactName", "İletişim İsmi", Model.ContactName)
+        @HtmlComponents.TextInputComponent("ContactTitle", "İletişim Başlığı", Model.ContactTitle)
+        @HtmlComponents.TextInputComponent("Address", "Adres", Model.Address)
+        @HtmlComponents.TextInputComponent("City", "Şehir", Model.City)
+        @HtmlComponents.TextInputComponent("Region", "Bölge", Model.Region)
+        @HtmlComponents.TextInputComponent("PostalCode", "Posta Kodu", Model.PostalCode)
+        @HtmlComponents.TextInputComponent("Country", "Ülke", Model.Country)
+        @HtmlComponents.TextInputComponent("Phone", "Telefon", Model.Phone)
+        @HtmlComponents.TextInputComponent("Fax", "Fax", Model.Fax)
+        @HtmlComponents.TextInputComponent("HomePage", "Ana Sayfa", Model.HomePage)
+        @HtmlComponents.HiddenInputComponent("SupplierId", Model.SupplierId.ToString())
+        @HtmlComponents.SubmitComponent("Güncelle")
+    }
+
+}

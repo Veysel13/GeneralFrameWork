@@ -16,5 +16,6 @@ namespace MyFramework.Entities.Concrete
         public virtual int CategoryId { get; set; }
         public virtual string QuantityPerUnit { get; set; }
         public virtual decimal UnitPrice { get; set; }
+        public virtual bool Discontinued { get; set; }
     }
 }

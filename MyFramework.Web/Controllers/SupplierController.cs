@@ -47,5 +47,30 @@ namespace MyFramework.Web.Controllers
             SuccessNotification("Kayıt Eklendi.");
             return RedirectToAction("Index");
         }
+
+
+        public ActionResult Update(int id)
+        {
+            Supplier model = _supplierService.GetById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Update(Supplier model)
+        {
+            _supplierService.Update(model);
+            SuccessNotification("Kayıt Güncellendi.");
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+             _supplierService.Delete(id);
+            SuccessNotification("Kayıt Silindi.");
+            return RedirectToAction("Index");
+        }
     }
 }

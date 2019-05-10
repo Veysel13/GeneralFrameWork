@@ -198,3 +198,5 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\ru\FluentValid
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\sv\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\tr\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\zh-CN\FluentValidation.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.csproj.GenerateResource.cache
+D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.Migrations.languageInformation.resources

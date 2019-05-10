@@ -12,7 +12,7 @@ namespace MyFramework.Business.ValidationRules.FluentValidation
     {
         public SupplierValidatior()
         {
-            RuleFor(p => p.SupplierId).NotEmpty();
+          
             RuleFor(p => p.CompanyName).NotEmpty().WithMessage("Şirket ismi boş bırakılamaz");
 
         }

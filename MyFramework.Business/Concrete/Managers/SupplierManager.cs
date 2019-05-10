@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MyFramework.Business.Abstract;
+using MyFramework.Business.ValidationRules.FluentValidation;
 using MyFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using MyFramework.Core.Aspects.Postsharp.CacheAspects;
 using MyFramework.Core.Aspects.Postsharp.LogAspects;
 using MyFramework.Core.Aspects.Postsharp.PerformanceAspects;
+using MyFramework.Core.Aspects.Postsharp.ValidationAspects;
 using MyFramework.Core.CrossCuttingConcerns.Caching.Microsoft;
 using MyFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
 using MyFramework.DataAccess.Abstract;
@@ -17,7 +19,10 @@ using Ninject.Activation.Caching;
 
 namespace MyFramework.Business.Concrete.Managers
 {
-   public class SupplierManager:ISupplierService
+    [LogAspect(typeof(DatabaseLogger))]
+    [LogAspect(typeof(FileLogger))]
+    [SecuredOperation(Roles = "SystemAdmin,Admin")]
+    public class SupplierManager:ISupplierService
    {
        private ISupplierDal _supplierDal;
        private IMapper _mapper { get; }
@@ -43,7 +48,9 @@ namespace MyFramework.Business.Concrete.Managers
 
         }
 
-       [CacheRemoveAspect(typeof(MemoryCacheManager))]
+
+        [FluentValidationAspect(typeof(SupplierValidatior))]
+        [CacheRemoveAspect(typeof(MemoryCacheManager))]
         public Supplier Add(Supplier supplier)
         {
             return _supplierDal.Add(supplier);
@@ -56,9 +63,10 @@ namespace MyFramework.Business.Concrete.Managers
         }
 
        [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        public void Delete(Supplier supplier)
-        {
-           _supplierDal.Delete(supplier);
-        }
+        public void Delete(int id)
+       {
+           Supplier model = GetById(id);
+           if (model !=null) _supplierDal.Delete(model);
+       }
     }
 }

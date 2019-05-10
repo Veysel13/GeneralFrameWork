@@ -4,6 +4,7 @@ using System.Linq;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using PostSharp.Aspects;
 
 namespace MyFramework.Core.Aspects.Postsharp.AuthorizationAspects
@@ -13,7 +14,6 @@ namespace MyFramework.Core.Aspects.Postsharp.AuthorizationAspects
     public class SecuredOperation : OnMethodBoundaryAspect
     {
         public string Roles { get; set; }
-
         //metoda girdigimiz zaman
         public override void OnEntry(MethodExecutionArgs args)
         {
@@ -33,6 +33,7 @@ namespace MyFramework.Core.Aspects.Postsharp.AuthorizationAspects
             }
             if (isAuthorized == false)
             {
+                //HttpContext.Current.Response.Redirect("/Account/SignIn");
                 throw new SecurityException("You are not authorized");
             }
 

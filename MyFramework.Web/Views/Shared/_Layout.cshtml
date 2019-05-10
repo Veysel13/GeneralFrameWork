@@ -1,4 +1,5 @@
 ﻿@using MyFramework.Web.Localize
+@using MyFramework.Web.Resources
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
     <meta name="description" content="" />
     <link rel="shortcut icon" href="javascript:void(0)" type="image/png">
 
-    <title>MyFramework @ViewBag.Title</title>
+    <title>@Word("Title") @ViewBag.Title</title>
 
     <!--easy pie chart-->
     <link href="~/assets/js/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen" />
@@ -37,7 +38,8 @@
 
     <link href="~/assets/css/owl.carousel.css" rel="stylesheet">
 
-
+    <!--bootstrap-fileinput-master-->
+    <link rel="stylesheet" type="text/css" href="~/assets/js/bootstrap-fileinput-master/css/fileinput.css" />
     <!--common style-->
     <link href="~/assets/css/style.css" rel="stylesheet">
     <link href="~/assets/css/style-responsive.css" rel="stylesheet">
@@ -50,11 +52,18 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/semantic.min.css"/>
     <!-- Bootstrap theme -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/bootstrap.min.css"/>
-</head>
+    @RenderSection("css",false)
+
+    </head>
 
 <body class="sticky-header">
+@if (HttpContext.Current.User.Identity.IsAuthenticated == false)
+{
+    Response.Redirect("/Account/SignIn");
+   // Html.Partial("NoAuthorize");
+}
 
-    <section>
+<section>
         <!-- sidebar left start-->
         <div class="sidebar-left">
             <!--responsive view logo start-->
@@ -62,7 +71,7 @@
                 <a href="@Url.Action("Index","Anasayfa")">
                     <img src="~/assets/img/logo-icon.png" alt="">
                     <!--<i class="fa fa-maxcdn"></i>-->
-                    <span class="brand-name">My Framework</span>
+                    <span class="brand-name">My Framework </span>
                 </a>
             </div>
             <!--responsive view logo end-->
@@ -78,6 +87,9 @@
                     </li>
                     <li class="active"><a href="@Url.Action("Index","Anasayfa")"><i class="fa fa-home"></i> <span>Anasayfa</span></a></li>
                     <li><a href="@Url.Action("Index","Product")"><i class="fa fa-shopping-cart"></i> <span>Ürünler</span></a></li>
+                    <li><a href="@Url.Action("Index","Category")"><i class="fa fa-shopping-cart"></i> <span>Kategori</span></a></li>
+                    <li><a href="@Url.Action("Index","Supplier")"><i class="fa fa-shopping-cart"></i> <span>Satıcı</span></a></li>
+                    <li><a href="@Url.Action("Index","RootPlan")"><i class="fa fa-shopping-cart"></i> <span>Root Planı</span></a></li>
                     @*<li class="menu-list">
                             <a href="index.html"><i class="fa fa-laptop"></i>  <span>Ürünler</span></a>
                             <ul class="child-list">
@@ -971,11 +983,32 @@
     <script src="~/assets/js/data-table/js/dataTables.scroller.min.js"></script>
     <!--data table init-->
     <script src="~/assets/js/data-table-init.js"></script>
+    
 
-    <!--common scripts for all pages-->
 
-    <script src="~/assets/js/scripts.js"></script>
- 
+<!--bootstrap-fileinput-master-->
+<script type="text/javascript" src="~/assets/js/bootstrap-fileinput-master/js/fileinput.js"></script>
+<script type="text/javascript" src="~/assets/js/file-input-init.js"></script>
+
+
+
+
+<!--common scripts for all pages-->
+
+<script src="~/assets/js/scripts.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+<!--Swal js-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.select2').select2();
+    });
+
+</script>
+    @RenderSection("js",false)
     @Html.Partial("_Timeout")
 
 </body>

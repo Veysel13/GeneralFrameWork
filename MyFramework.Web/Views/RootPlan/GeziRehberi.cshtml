@@ -1,0 +1,85 @@
+﻿
+@model RootPlanViewModel
+@{
+    ViewBag.Title = "Gezi Rehberi";
+
+}
+
+@using (Html.BeginCard("Bugün Kİ Gezİ Rehberİ"))
+{
+    <ul class="todo-list-item ui-sortable" id="todo-list">
+        @foreach (var item in Model.RootPlans)
+        {
+            bool check = Model.RootPoints.Select(x => x.RootPlanId).Contains(item.RootPlanId);
+
+            <li class="clearfix @(check ? "todo-done" : "")">
+
+                <div class="chk-todo-my pull-left">
+                    <div class="icheckbox_minimal-green @(check ? "checked" : "")" style="position: relative;">
+                        <input type="checkbox" style="position: absolute; opacity: 0;" onclick="rootCheck(@item.RootPlanId)">
+
+                    </div>
+
+                </div>
+                <p class="todo-title hidden-md hidden-sm hidden-xs">
+                    @item.SupplierName adlı kişiye planlama yapılmış
+                </p>
+                <div class="action-todo pull-right clearfix" style="margin-bottom: 10px">
+                    <a href="#" class="todo-edit"><i class="icon-clock"></i><span style="border-radius: 10px;width: 60px; color: black;font-size: 17px">Saat @item.Time</span></a>
+                    <a href="#">
+                        <i class="fa fa-user"></i>
+                        <span class="btn btn-danger btn-sm" style="border-radius: 10px;width: 120px;">@item.SupplierName</span>
+                    </a>
+                </div>
+            </li>
+        }
+
+
+    </ul>
+}
+
+
+
+
+@section css{
+    <style>
+        .chk-todo-my {
+            margin-right: 10px;
+            position: relative;
+            top: -2px;
+        }
+
+        .todo-done {
+            background-color: #a288d2;
+        }
+
+        .action-todo a {
+            height: 24px;
+            width: 150px;
+            display: inline-block;
+            float: left;
+        }
+    </style>
+}
+@section js{
+
+    <script>
+        function rootCheck(id) {
+            $.ajax({
+                method: "POST",
+                url: "/RootPlan/CheckPlan",
+                data: { Id: id }
+            }).done(function (result) {
+                console.log(result);
+                swal(result.durum, result.icerik, result.status).then((ok) => {
+                    location.reload();
+                });
+                console.log(result);
+            }).fail(function (result) {
+                console.log(result);
+            }).always(function () {
+
+            });
+        }
+    </script>
+}

@@ -22,7 +22,7 @@ namespace MyFramework.Business.Abstract
         [OperationContract]
         Product Update(Product product);
        [OperationContract]
-        void Delete(Product product);
+        void Delete(int id);
         [OperationContract]
         void TransactionalOperation(Product product1,Product product2);
         [OperationContract]

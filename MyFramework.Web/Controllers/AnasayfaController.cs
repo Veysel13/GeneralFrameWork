@@ -4,9 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MyFramework.Web.Infrastructure;
+using MyFramework.Web.Resources;
 
 namespace MyFramework.Web.Controllers
 {
+    //[Localization]
     public class AnasayfaController : BaseController
     {
 
@@ -17,6 +19,12 @@ namespace MyFramework.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult ChangeCulture(string dilId, string lang, string returnUrl)
+        {
+            Response.Cookies.Add(new HttpCookie("culture", lang));
+            return Redirect(returnUrl);
         }
     }
 }

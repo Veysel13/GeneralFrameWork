@@ -16,20 +16,51 @@ namespace MyFramework.Web.Controllers
     //controllerin consruct üretmek için Core katmanında Utilities kısmını yazmam gerekir
     //daha sonra global.assax da bunu belirmemiz gerekir.
     //ninject paktinide kurulması gerekiyor
+    //[ExceptionFilter]
     [AuthorizationFilter]
-    public class ProductController : BaseController
+   public class ProductController : BaseController
     {
         private IProductService _productService;
-        public ProductController(IProductService productService)
+        private ICategoryService _categoryService;
+        private ISupplierService _supplierService;
+        public ProductController(IProductService productService, ICategoryService categoryService, ISupplierService supplierService)
         {
             _productService = productService;
+            _categoryService = categoryService;
+            _supplierService = supplierService;
         }
-
+      
         public ActionResult Index()
         {
             var model = new ProductListViewModel();
-            model.Products = _productService.GetListProductDetails();
+            model.Products = _productService.GetListProductDetails().Where(x=>x.Discontinued==true).ToList();
             return View(model);
+        }
+
+        public ActionResult Create()
+        {
+            ProductAddedViewModel model = new ProductAddedViewModel();
+            model.CategoriesData = new SelectList(_categoryService.GetAll(), "CategoryId", "CategoryName");
+            model.SuppliersData = new SelectList(_supplierService.GetAll(), "SupplierId", "CompanyName");
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Product model)
+        {
+            _productService.Add(model);
+            SuccessNotification("Kayıt Eklendi.");
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+            _productService.Delete(id);
+            SuccessNotification("Kayıt Silindi.");
+            return RedirectToAction("Index");
         }
         public ActionResult Deneme(Int32? page, Int32? rows)
         {
@@ -58,40 +89,37 @@ namespace MyFramework.Web.Controllers
             ViewBag.totalRows = Convert.ToInt32(total);
             return View(col);
         }
-        public string Add()
-        {
-            _productService.Add(new Product
-            {
-                CategoryId = 1,
-                ProductName = "aaa",
-                QuantityPerUnit = "1",
-                UnitPrice = 21
-            });
-            return "Added";
-        }
+        //public string Add()
+        //{
+        //    _productService.Add(new Product
+        //    {
+        //        CategoryId = 1,
+        //        ProductName = "aaa",
+        //        QuantityPerUnit = "1",
+        //        UnitPrice = 21
+        //    });
+        //    return "Added";
+        //}
 
-        public string AddUpdate()
-        {
-            _productService.TransactionalOperation(new Product
-            {
-                CategoryId = 1,
-                ProductName = "cc",
-                QuantityPerUnit = "1",
-                UnitPrice = 3
-            }, new Product
-            {
-                CategoryId = 1,
-                ProductName = "cc",
-                QuantityPerUnit = "1",
-                UnitPrice = 33,
-                ProductId = 2
-            });
-            return "UpdateAdded";
-        }
+        //public string AddUpdate()
+        //{
+        //    _productService.TransactionalOperation(new Product
+        //    {
+        //        CategoryId = 1,
+        //        ProductName = "cc",
+        //        QuantityPerUnit = "1",
+        //        UnitPrice = 3
+        //    }, new Product
+        //    {
+        //        CategoryId = 1,
+        //        ProductName = "cc",
+        //        QuantityPerUnit = "1",
+        //        UnitPrice = 33,
+        //        ProductId = 2
+        //    });
+        //    return "UpdateAdded";
+        //}
 
-        public ActionResult Create()
-        {
-            return View();
-        }
+      
     }
 }

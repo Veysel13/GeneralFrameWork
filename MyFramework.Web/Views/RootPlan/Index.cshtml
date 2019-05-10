@@ -1,0 +1,249 @@
+﻿
+@model RootPlanListViewModel
+@{
+    ViewBag.Title = "Root Planı";
+
+
+    string[] times = { "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30" };
+
+    var list = new List<KeyValuePair<DayOfWeek, string>>();
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)1, "Pazartesi"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)2, "Salı"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)3, "Çarşamba"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)4, "Perşembe"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)5, "Cuma"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)6, "Cumartesi"));
+    list.Add(new KeyValuePair<DayOfWeek, string>((DayOfWeek)0, "Pazar"));
+
+}
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <a class="btn btn-primary rootplan" style="margin-bottom: 15px; background-color: #5fc6e6;border-color: #5fc6e6; "><i class="fa fa-sign-out"></i> Yeni Plan Ekle</a>
+        <a href="@Url.Action("GeziRehberi","RootPlan")" class="btn btn-success" style="margin-bottom: 15px; "><i class="fa fa-plane"></i> Günün Rehberi</a>
+
+        <div class="agenda">
+            <div class="table-responsive">
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Saatler</th>
+                            @foreach (var item in list)
+                            {
+                                <td>@item.Value</td>
+                            }
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var time in times)
+                        {
+
+                            <tr>
+                                <td class="agenda-date" class="active">
+                                    <div class="dayofmonth">@time</div>
+                                </td>
+
+                                @foreach (var gunler in list)
+                                {
+                                    var entry = Model.RootPlans.Find(x => x.DayOfWeek == gunler.Key && x.Time == time);
+
+                                    if (entry != null)
+                                    {
+
+                                        <td class="agenda-date" class="active">
+
+                                            <div class="full">
+                                                <div class="dayofmonth"><i class="fa fa-calendar"></i></div>
+                                                <div class="dayofweek">@entry.SupplierName</div>
+
+                                                <div class="dayofweek" style="margin-top:16px;"><a href="@Url.Action("Delete","RootPlan",new {id=entry.RootPlanId})"><i class="btn btn-default btn-xs fa fa-remove"></i></a></div>
+
+                                            </div>
+
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td class="agenda-date" class="active"></td>
+                                    }
+                                }
+
+
+
+
+                            </tr>
+                        }
+
+
+                        <!-- Multiple events in a single day (note the rowspan) -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+@section css{
+    <!--calendar-->
+    <link href="~/assets/js/fullcalendar/bootstrap-fullcalendar.css" rel="stylesheet" />
+    <style>
+
+        .agenda .agenda-date {
+            width: 170px;
+        }
+
+            .agenda .agenda-date .dayofmonth {
+                width: 40px;
+                font-size: 25px;
+                line-height: 36px;
+                float: left;
+                text-align: right;
+                margin-right: 10px;
+            }
+
+            .agenda .agenda-date .shortdate {
+                font-size: 0.75em;
+                color: white;
+            }
+
+        .agenda .agenda-time {
+            width: 140px;
+        }
+
+        table {
+            background-color: white
+        }
+
+            table thead tr {
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                background: #f6f6f6 !important;
+            }
+
+                table thead tr th {
+                    width: 170px;
+                }
+
+        .agenda-date {
+            border-color: #ebebeb !important;
+            color: #a3a3a3 !important;
+            font-weight: normal;
+        }
+
+        .full {
+            background-color: #5fc6e6;
+            color: white;
+        }
+
+        table thead tr th:first-child {
+            width: 70px !important;
+        }
+
+        table tbody tr td:first-child {
+            width: 70px !important;
+        }
+    </style>
+}
+@section js{
+
+    @*Modal Popap*@
+    <div class="modal" id="PlanEkleModal">
+        <div class="modal-dialog">
+            <div class="panel">
+                <div class="panel-heading">Plan Oluştur</div>
+                @using (Html.BeginForm(Url.Action("Add", "RootPlan", FormMethod.Post)))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="panel-body">
+                        <div class="form-horizontal form-bordered p-lg">
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="modalAciklama">Saat Seçiniz</label>
+                                <div class="col-md-6">
+                                    <select style="width: 100%" class="form-control select2" name="Time" required="required">
+
+                                        @foreach (var item in times)
+                                        {
+                                            <option value="@item">@item</option>
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="modalAciklama">Gün Seçiniz</label>
+                                <div class="col-md-6">
+                                    <select style="width: 100%" class="form-control select2" name="DayOfWeek" required="required">
+
+                                        @foreach (var item in list)
+                                        {
+                                            <option value="@item.Key">@item.Value</option>
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="modalAciklama">Tedarikçi Seçiniz</label>
+                                <div class="col-md-6">
+                                    <select style="width: 100%" class="form-control select2" name="SupplierId" required="required">
+
+                                        @foreach (var item in Model.Suppliers)
+                                        {
+                                            <option value="@item.SupplierId">@item.CompanyName</option>
+                                        }
+                                    </select>
+
+                                </div>
+                            </div>
+
+
+                            <button type="submit" class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                }
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </div>
+    @*Modal Popap*@
+
+
+
+    @* Plan KontrolDeğeri*@
+    <div id="tempdata">@TempData["RootPlanAlreadyExist"]</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            var deger = $("table>td:first").text();
+
+            if (deger != "") {
+                alert(deger);
+            }
+
+            var planexist = $("#tempdata").html();
+            if (planexist != "") {
+                swal("Plan Mevcut", planexist, "error");
+            }
+        });
+
+
+        $(".rootplan").click(function () {
+
+            $("#PlanEkleModal").modal("show");
+        });
+
+    </script>
+}

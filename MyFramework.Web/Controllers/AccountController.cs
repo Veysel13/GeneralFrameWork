@@ -47,6 +47,7 @@ namespace MyFramework.Web.Controllers
        
         public ActionResult Login(string userName,string password)
         {
+           
             var user = _userService.GetByUserNameAndPassword(TempData["userName"].ToString(),
                 TempData["password"].ToString());
             if (user!=null &&user.IsActive==true)
@@ -61,7 +62,8 @@ namespace MyFramework.Web.Controllers
                 user.LastName);
                 return RedirectToAction("Index", "Anasayfa");
             }
-            return Redirect("NotAuthorization");
+            //return Redirect("NotAuthorization");
+            return PartialView("NotAuthorization");
         }
 
         public ActionResult SignOut()

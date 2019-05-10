@@ -49,7 +49,7 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles="SystemAdmin,Admin")]
+       [SecuredOperation(Roles="Admin")]
         public List<Product> GetAll()
        {
             // Thread.Sleep(3000);
@@ -80,8 +80,7 @@ namespace MyFramework.Business.Concrete.Managers
             return _productDal.Get(x => x.ProductId == id);
         }
         [FluentValidationAspect(typeof(ProductValidatior))]
-        //ürünle alakalı tüm keşleri siler
-        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+       [CacheRemoveAspect(typeof(MemoryCacheManager))]
         //sadece bu cache siler
         //[CacheRemoveAspect("MyFramework.Business.Concrete.Managers.Add", typeof(MemoryCacheManager))]
         [LogAspect(typeof(FileLogger))]
@@ -124,15 +123,23 @@ namespace MyFramework.Business.Concrete.Managers
             }*/
           
        }
-
-       public List<ProductDetail> GetListProductDetails()
+       [CacheAspect(typeof(MemoryCacheManager))]
+       //[SecuredOperation(Roles ="Admin,Student")]
+        public List<ProductDetail> GetListProductDetails()
        {
           return _productDal.GetProductDetails();
        }
-
-        public void Delete(Product product)
+       [CacheRemoveAspect(typeof(MemoryCacheManager))]
+       [TransactionScopeAspect]
+        public void Delete(int id)
         {
-            _productDal.Delete(product);
+            Product model = GetById(id);
+            if (model !=null)
+            {
+                model.Discontinued = false;
+                _productDal.Update(model);
+            }
+           
         }
     }
 }

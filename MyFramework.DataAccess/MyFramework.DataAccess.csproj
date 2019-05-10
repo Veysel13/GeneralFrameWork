@@ -69,15 +69,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDal.cs" />
+    <Compile Include="Abstract\ILanguageDal.cs" />
+    <Compile Include="Abstract\ILanguageWordDal.cs" />
+    <Compile Include="Abstract\Interface1.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
+    <Compile Include="Abstract\IRootPlanDal.cs" />
     <Compile Include="Abstract\ISupplierDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfLanguageDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfLanguageWordDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRootPlanDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfCategoryDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfProductDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfRootPointDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfSupplierDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfUserDal.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\CategoryMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\LanguageMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\LanguageWordMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\ProductMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\RootPlanMap.cs" />
+    <Compile Include="Concrete\EntityFramework\Mappings\RootPointMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\SupplierMap.cs" />
     <Compile Include="Concrete\EntityFramework\Mappings\UserMap.cs" />
     <Compile Include="Concrete\EntityFramework\NorthwindContext.cs" />
@@ -86,6 +98,11 @@
     <Compile Include="Concrete\NHibernate\NhCategoryDal.cs" />
     <Compile Include="Concrete\NHibernate\Mappings\ProductMap.cs" />
     <Compile Include="Concrete\NHibernate\NhProductDal.cs" />
+    <Compile Include="Migrations\201905101238505_languageInformation.cs" />
+    <Compile Include="Migrations\201905101238505_languageInformation.Designer.cs">
+      <DependentUpon>201905101238505_languageInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -101,6 +118,11 @@
       <Project>{0572EF84-09F7-47AD-874D-1DA3030DD01F}</Project>
       <Name>MyFramework.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201905101238505_languageInformation.resx">
+      <DependentUpon>201905101238505_languageInformation.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Kategori Ekleme"))
+{
+    using (Html.BeginForm(Url.Action("Create", "Category"),true))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "w3-text-red" })
+
+
+        @HtmlComponents.TextInputComponent("CategoryName", "Kategori İsmi")
+        @HtmlComponents.TextInputComponent("Description", "Açıklama")
+        @HtmlComponents.FileInputComponent("Image", "Resim")
+      
+        @HtmlComponents.SubmitComponent("Ekle")
+
+    }
+
+}

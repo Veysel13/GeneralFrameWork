@@ -42,10 +42,15 @@
   <ItemGroup>
     <Compile Include="ComplexType\ImageDetail.cs" />
     <Compile Include="ComplexType\ProductDetail.cs" />
+    <Compile Include="ComplexType\RootPlanDetail.cs" />
     <Compile Include="ComplexType\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Language.cs" />
+    <Compile Include="Concrete\LanguageWord.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Role.cs" />
+    <Compile Include="Concrete\RootPlan.cs" />
+    <Compile Include="Concrete\RootPoint.cs" />
     <Compile Include="Concrete\Supplier.cs" />
     <Compile Include="Concrete\User.cs" />
     <Compile Include="Concrete\UserRole.cs" />

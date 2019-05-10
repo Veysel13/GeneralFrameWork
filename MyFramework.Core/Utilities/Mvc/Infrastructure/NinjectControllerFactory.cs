@@ -8,7 +8,6 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject.Modules;
 
-
 namespace MyFramework.Core.Utilities.Mvc.Infrastructure
 {
    public class NinjectControllerFactory : DefaultControllerFactory

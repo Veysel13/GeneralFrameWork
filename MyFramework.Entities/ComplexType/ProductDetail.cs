@@ -13,5 +13,6 @@ namespace MyFramework.Entities.ComplexType
         public virtual decimal UnitPrice { get; set; }
         public virtual string CategoryName { get; set; }
         public virtual string CompanyName { get; set; }
+        public virtual bool Discontinued { get; set; }
     }
 }

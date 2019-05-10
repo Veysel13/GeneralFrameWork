@@ -13,6 +13,6 @@ namespace MyFramework.Business.Abstract
         Supplier GetById(int id);
         Supplier Add(Supplier supplier);
         Supplier Update(Supplier supplier);
-        void Delete(Supplier supplier);
+        void Delete(int  id);
     }
 }

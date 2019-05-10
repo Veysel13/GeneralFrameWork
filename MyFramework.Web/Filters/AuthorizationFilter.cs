@@ -18,15 +18,12 @@ namespace MyFramework.Web.Filters
             try
             {
                 var authCookie = HttpContext.Current.Request.Cookies[FormsAuthentication.FormsCookieName];
-
                 var encTicket = authCookie?.Value;
                 if (String.IsNullOrEmpty(encTicket))
                 {
-
                     filterContext.Result = new RedirectToRouteResult(
                         new RouteValueDictionary { { "controller", "Account" },
                             { "action", "SignIn" }
-
                         });
                     return;
                 }

@@ -9,6 +9,6 @@ namespace MyFramework.Entities.ComplexType
    public class ImageDetail
     {
         public string Image { get; set; }
-        public string ThumpImage { get; set; }
+        public string ThumbImage { get; set; }
     }
 }

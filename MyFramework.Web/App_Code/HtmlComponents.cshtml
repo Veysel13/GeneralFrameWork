@@ -72,7 +72,7 @@
 {
     <div class="form-group">
         <label for="@name">@label</label>
-        <select class="form-control" id="@name" name="@name" placeholder="@placeHolder">
+        <select class="form-control select2" id="@name" name="@name" placeholder="@placeHolder">
             @if (secenekeler != null)
             {
                 foreach (var item in secenekeler)
@@ -89,7 +89,7 @@
 {
     <div class="form-group">
         <label for="@name">@label</label>
-        <select class="form-control" id="@name" name="@name" placeholder="@placeHolder">
+        <select class="form-control select2" id="@name" name="@name" placeholder="@placeHolder">
             @if (secenekeler != null)
             {
                 <option value="0">Oda Tipi Şeçiniz</option>
@@ -105,7 +105,7 @@
 @helper FileInputComponent(string name, string label, string placeHolder = "")
 {
     <div class="form-group">
-        <label>File input</label>
+        <label>Resim</label>
         <input id="@name" class="file" name="@name" type="file">
 
         <p class="help-block">Lütfen sadece resim yükleyin.</p>
@@ -131,6 +131,20 @@
     </div>
 }
 
+@helper CheckInputComponent(string name, string label, string value = "", string placeHolder = "")
+{
+    <div class="form-group">
+        <label for="@name">@label</label>
+        <input type="checkbox" class="form-control" id="@name" name="@name" placeholder="@placeHolder">
+    </div>
+}
+
+@helper HiddenInputComponent(string name, string value = "")
+{
+  
+        <input type="hidden" class="form-control" id="@name" name="@name" value="@value">
+   
+}
 @helper SubmitComponent(string text)
 {
     <button type="submit" class="btn btn-info">@text</button>

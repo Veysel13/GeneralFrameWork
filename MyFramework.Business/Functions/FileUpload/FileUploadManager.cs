@@ -41,7 +41,7 @@ namespace MyFramework.Business.Functions.FileUpload
             string thumpImage = Thumbnail(file, $"{filename}.{extension}", height, witdh);
             var imageDetail = new ImageDetail
             {
-                ThumpImage = thumpImage,
+                ThumbImage = thumpImage,
                 Image = $"{path}{filename}.{extension}"
             };
             return imageDetail;
@@ -55,7 +55,7 @@ namespace MyFramework.Business.Functions.FileUpload
             Bitmap OrjinalResim = new Bitmap(file.InputStream);
             Graphics Kanvas = Graphics.FromImage(Thumbnail);
             Kanvas.DrawImage(OrjinalResim, new Rectangle(0, 0, Genislik, Yukseklik), 0, 0, OrjinalResim.Width, OrjinalResim.Height, GraphicsUnit.Pixel);
-            string path = $"/Medya/Thump/";
+            string path = $"/Medya/Thumb/";
             Thumbnail.Save(HostingEnvironment.MapPath($"{path}{name}") ?? throw new InvalidOperationException(), System.Drawing.Imaging.ImageFormat.Jpeg);
             return $"{path}{name}";
         }

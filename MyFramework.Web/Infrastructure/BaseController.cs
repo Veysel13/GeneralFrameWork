@@ -8,9 +8,11 @@ using System.Web.Mvc;
 using MyFramework.Core.CrossCuttingConcerns.ExceptionHandling.Exceptions;
 using MyFramework.Core.CrossCuttingConcerns.Logging.Log4Net.Logger;
 using MyFramework.Core.Utilities.Mvc.Enums;
+using MyFramework.Web.Resources;
 
 namespace MyFramework.Web.Infrastructure
 {
+   
     public class BaseController : Controller
     {
         protected override void OnException(ExceptionContext filterContext)

@@ -129,7 +129,6 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\Microsoft.DiaSymRead
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\Microsoft.Win32.Primitives.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.AppContext.dll
-D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Collections.Immutable.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Console.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Diagnostics.Process.dll
@@ -382,3 +381,4 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\Mvc.Grid.Core.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\TenTec.Windows.iGridLib.iGrid.v4.6.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.iGrid Sample VB.resources
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.csproj.GenerateResource.cache
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Collections.Immutable.dll

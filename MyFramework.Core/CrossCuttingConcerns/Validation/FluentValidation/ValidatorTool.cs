@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using FluentValidation;
 
 
@@ -17,6 +18,7 @@ namespace MyFramework.Core.CrossCuttingConcerns.Validation.FluentValidation
             if (result.Errors.Count>0)
             {
                 throw new ValidationException(result.Errors);
+                //HttpContext.Current.Response.Redirect("/Home/Index");
             }
         }
     }

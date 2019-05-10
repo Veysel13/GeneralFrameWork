@@ -48,7 +48,7 @@ namespace MyFramework.Core.DataAccess.EntityFramework
             using (var context = new TContext())
             {
                 var updatedEntity = context.Entry(entity);
-                updatedEntity.State = EntityState.Added;
+                updatedEntity.State = EntityState.Modified;
                 context.SaveChanges();
                 return entity;
             }
@@ -59,7 +59,7 @@ namespace MyFramework.Core.DataAccess.EntityFramework
             using (var context = new TContext())
             {
                 var deletedEntity = context.Entry(entity);
-                deletedEntity.State = EntityState.Added;
+                deletedEntity.State = EntityState.Deleted;
                 context.SaveChanges();
                 
             }

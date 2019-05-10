@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MyFramework.Business.Abstract;
 using MyFramework.Business.Concrete.Managers;
+using MyFramework.Business.Functions.FileUpload;
 using MyFramework.Core.DataAccess;
 using MyFramework.Core.DataAccess.EntityFramework;
 using MyFramework.Core.DataAccess.NHihabernate;
@@ -30,6 +31,25 @@ namespace MyFramework.Business.DependencyResolvers.Ninject
 
             Bind<ISupplierService>().To<SupplierManager>().InSingletonScope();
             Bind<ISupplierDal>().To<EfSupplierDal>().InSingletonScope();
+
+            Bind<ICategoryService>().To<CategoryManager>().InSingletonScope();
+            Bind<ICategoryDal>().To<EfCategoryDal>().InSingletonScope();
+
+            Bind<IRootPlanService>().To<RootPlanManager>().InSingletonScope();
+            Bind<IRootPlanDal>().To<EfRootPlanDal>().InSingletonScope();
+
+            Bind<IRootPointService>().To<RootPointManager>().InSingletonScope();
+            Bind<IRootPointDal>().To<EfRootPointDal>().InSingletonScope();
+
+            Bind<ILanguageService>().To<LanguageManager>().InSingletonScope();
+            Bind<ILanguageDal>().To<EfLanguageDal>().InSingletonScope();
+
+            Bind<ILanguageWordService>().To<LanguageWordManager>().InSingletonScope();
+            Bind<ILanguageWordDal>().To<EfLanguageWordDal>().InSingletonScope();
+
+
+
+            Bind<IFileUploadService>().To<FileUploadManager>().InSingletonScope();
             //burdakiler standart kullandıgımız için gerekli
             Bind(typeof(IQueryableRepository<>)).To(typeof(EfQueryableRepository<>));
             Bind<DbContext>().To<NorthwindContext>();

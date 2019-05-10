@@ -26,7 +26,8 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
                         ProductName = p.ProductName,
                         UnitPrice=p.UnitPrice,
                         CategoryName = c.CategoryName,
-                        CompanyName = s.CompanyName
+                        CompanyName = s.CompanyName,
+                        Discontinued = p.Discontinued
                     };
                 return result.ToList();
             }

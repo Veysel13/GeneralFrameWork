@@ -13,9 +13,9 @@ namespace MyFramework.Business.ValidationRules.FluentValidation
    {
        public ProductValidatior()
        {
-           RuleFor(p=>p.CategoryId).NotEmpty();
-           RuleFor(p=>p.SupplierId).NotEmpty();
-           RuleFor(p => p.ProductName).NotEmpty();
+           RuleFor(p=>p.CategoryId).NotEmpty().WithMessage("Kategory boş bırakılamaz"); 
+           RuleFor(p=>p.SupplierId).NotEmpty().WithMessage("Satıcı boş bırakılamaz"); 
+           RuleFor(p => p.ProductName).NotEmpty().WithMessage("Ürün ismi boş bırakılamaz"); 
            RuleFor(p => p.UnitPrice).GreaterThan(0);
            RuleFor(p => p.QuantityPerUnit).NotEmpty();
            RuleFor(p => p.ProductName).Length(2,20);
