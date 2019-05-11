@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Müşteri Ekleme"))
+{
+    using (Html.BeginForm(Url.Action("Create", "Customer"), true))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "w3-text-red" })
+
+        @HtmlComponents.TextInputComponent("CompanyName","Şirket İsmi")
+        @HtmlComponents.TextInputComponent("ContactName","Kişi Adı")
+        @HtmlComponents.TextInputComponent("ContactTitle","İletişim Başlığı")
+        @HtmlComponents.TextInputComponent("Address", "Adres")
+        @HtmlComponents.TextInputComponent("City", "Şehir")
+        @HtmlComponents.TextInputComponent("Region", "Bölge")
+        @HtmlComponents.TextInputComponent("PostalCode", "Posta Kodu")
+        @HtmlComponents.TextInputComponent("Country", "Ülke")
+        @HtmlComponents.TextInputComponent("Phone", "Telefon")
+        @HtmlComponents.TextInputComponent("Fax", "Fax")
+        @HtmlComponents.SubmitComponent("Ekle")
+
+    }
+
+}

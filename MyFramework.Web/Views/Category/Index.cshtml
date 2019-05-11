@@ -1,6 +1,6 @@
 ﻿@model CategoryListViewModel
 
-@using (Html.BeginCard("Kategori Listesi"))
+@using (Html.BeginCard(Word("Category.Title").ToString()))
 {
     @HtmlComponents.NewAddButtonComponent(Url.Action("Create", "Category"))
     using (Html.BeginTable(new[] { "Kategori Adı", "Açıklaması","Resim","" }))

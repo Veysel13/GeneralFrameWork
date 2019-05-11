@@ -33,7 +33,7 @@ namespace MyFramework.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public List<RootPlan> GetAll()
         {
            return _mapper.Map<List<RootPlan>>(_rootPlanDal.GetList());
@@ -41,7 +41,7 @@ namespace MyFramework.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public RootPlan GetById(int id)
         {
 
@@ -50,7 +50,7 @@ namespace MyFramework.Business.Concrete.Managers
 
         [FluentValidationAspect(typeof(RootPlanValidatior))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public RootPlan Add(RootPlan rootplan)
         {
             rootplan.CreatedDate=DateTime.Now;
@@ -60,14 +60,14 @@ namespace MyFramework.Business.Concrete.Managers
 
         [FluentValidationAspect(typeof(RootPlanValidatior))]
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public RootPlan Update(RootPlan rootplan)
         {
             return _rootPlanDal.Update(rootplan);
         }
 
         [CacheRemoveAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public void Delete(int id)
         {
             RootPlan model = GetById(id);
@@ -75,7 +75,7 @@ namespace MyFramework.Business.Concrete.Managers
         }
 
         [CacheAspect(typeof(MemoryCacheManager))]
-        [SecuredOperation(Roles = "SystemAdmin,Admin")]
+        //[SecuredOperation(Roles = "SystemAdmin,Admin")]
         public List<RootPlanDetail> GetListRootPlanDetails()
         {
             return _mapper.Map<List<RootPlanDetail>>(_rootPlanDal.GetRootPlanDetails());

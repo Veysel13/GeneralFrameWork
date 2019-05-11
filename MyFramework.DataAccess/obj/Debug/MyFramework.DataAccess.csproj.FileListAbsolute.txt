@@ -194,8 +194,6 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\sv\FluentValid
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\tr\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\bin\Debug\zh-CN\FluentValidation.resources.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.csprojAssemblyReference.cache
-D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.Migrations.languageInformation.resources
-D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.csproj.GenerateResource.cache
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.csproj.CoreCompileInputs.cache
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.csproj.CopyComplete
 D:\Visualstudio\GeneralFrameWork\MyFramework.DataAccess\obj\Debug\MyFramework.DataAccess.dll

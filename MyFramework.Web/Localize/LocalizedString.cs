@@ -31,12 +31,17 @@ namespace MyFramework.Web.Localize
 
             var languageWordService = DependencyResolver<ILanguageWordService>.Resolve();
             var languageService = DependencyResolver<ILanguageService>.Resolve();
+            var cookie = "tr-TR";
+            if (HttpContext.Current.Session["language"] != null)
+            {
+                cookie = HttpContext.Current.Session["language"].ToString();
+            }
+           
+            //var culture = Thread.CurrentThread.CurrentUICulture.Name;
+            if (cookie.Length < 3)
+                cookie = cookie.Replace(cookie, cookie + "-" + cookie.ToUpper());
 
-            var culture = Thread.CurrentThread.CurrentUICulture.Name;
-            if (culture.Length < 3)
-                culture = culture.Replace(culture, culture + "-" + culture.ToUpper());
-
-            var language = languageService.Get(culture);
+            var language = languageService.Get(cookie);
             var data = languageWordService.GetValue(language.LanguageId, code);
 
             _word = data != null ? data.Value : code;

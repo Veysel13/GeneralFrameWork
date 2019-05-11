@@ -23,8 +23,10 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.SupplierId).HasColumnName("SupplierID");
             Property(x => x.QuantityPerUnit).HasColumnName("QuantityPerUnit");
             Property(x => x.UnitPrice).HasColumnName("UnitPrice");
+            Property(x => x.UnitsInStock).HasColumnName("UnitsInStock");
+            Property(x => x.UnitsOnOrder).HasColumnName("UnitsOnOrder");
             Property(x => x.Discontinued).HasColumnName("Discontinued");
-            
+            Property(x => x.ReorderLevel).HasColumnName("ReorderLevel");
         }
     }
 }

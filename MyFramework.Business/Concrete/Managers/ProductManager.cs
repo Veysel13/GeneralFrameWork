@@ -49,7 +49,7 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles="Admin")]
+       [SecuredOperation(Roles= "Student,Admin")]
         public List<Product> GetAll()
        {
             // Thread.Sleep(3000);
@@ -77,7 +77,7 @@ namespace MyFramework.Business.Concrete.Managers
 
         public Product GetById(int id)
         {
-            return _productDal.Get(x => x.ProductId == id);
+            return _mapper.Map<Product>(_productDal.Get(x => x.ProductId == id));
         }
         [FluentValidationAspect(typeof(ProductValidatior))]
        [CacheRemoveAspect(typeof(MemoryCacheManager))]

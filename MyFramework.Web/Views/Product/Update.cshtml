@@ -1,0 +1,40 @@
+﻿
+@model ProductAddedViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Ürün Ekleme"))
+{
+    using (Html.BeginForm(Url.Action("Update", "Product")))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "w3-text-red" })
+
+        @HtmlComponents.TextInputComponent("ProductName", "Ürün İsmi",Model.Product.ProductName)
+        @HtmlComponents.TextInputComponent("QuantityPerUnit", "Birim Başına Miktar ",Model.Product.QuantityPerUnit)
+        @HtmlComponents.TextInputComponent("UnitPrice", "Fiyatı", Model.Product.UnitPrice.ToString())
+        @HtmlComponents.NumberInputComponent("UnitsInStock", "Stok", Model.Product.UnitsInStock)
+        @HtmlComponents.NumberInputComponent("UnitsOnOrder", "Sırası", Model.Product.UnitsOnOrder)
+
+
+        <div class="form-group">
+            @Html.Label("Aktiflik", new { @class = "control-label" })
+
+            @Html.CheckBoxFor(x => x.Discontinued, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Kategori", new { @class = "control-label" })
+
+            @Html.DropDownListFor(m => m.CategoryId, Model.CategoriesData, "Lütfen Seçiniz", new { @class = "dropdown form-control select2", required = "required" })
+        </div>
+        <div class="form-group">
+            @Html.Label("Satıcı", new { @class = "control-label" })
+            @Html.DropDownListFor(m => m.SupplierId, Model.SuppliersData, "Lütfen Seçiniz", new { @class = "dropdown form-control select2", required = "required" })
+        </div>
+        @HtmlComponents.HiddenInputComponent("ProductId", Model.Product.ProductId.ToString())
+        @HtmlComponents.SubmitComponent("Ekle")
+
+    }
+
+}

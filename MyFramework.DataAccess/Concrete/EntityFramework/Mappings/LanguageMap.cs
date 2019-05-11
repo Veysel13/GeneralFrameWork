@@ -17,7 +17,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework.Mappings
             Property(x => x.LanguageId).HasColumnName("LanguageId");
             Property(x => x.Name).HasColumnName("Name");
             Property(x => x.Code).HasColumnName("Code");
-
+            Property(x => x.Image).HasColumnName("Image");
         }
     }
 }

@@ -192,3 +192,4 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.csp
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.dll.postsharp
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.pdb
+D:\Visualstudio\GeneralFrameWork\MyFramework.Core\obj\Debug\MyFramework.Core.csprojAssemblyReference.cache

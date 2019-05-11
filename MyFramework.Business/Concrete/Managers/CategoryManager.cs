@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using AutoMapper;
 using MyFramework.Business.Abstract;
+using MyFramework.Business.Functions.FileUpload;
 using MyFramework.Business.ValidationRules.FluentValidation;
 using MyFramework.Core.Aspects.Postsharp.AuthorizationAspects;
 using MyFramework.Core.Aspects.Postsharp.CacheAspects;
@@ -60,6 +61,7 @@ namespace MyFramework.Business.Concrete.Managers
         }
 
        [CacheRemoveAspect(typeof(MemoryCacheManager))]
+       [FluentValidationAspect(typeof(CategoryValidatior))]
         public Category Update(Category category,HttpPostedFileBase Image)
         {
             if (Image != null)
@@ -78,8 +80,12 @@ namespace MyFramework.Business.Concrete.Managers
            if (model !=null)
            {
                model.IsActive = false;
-           }
-             _categoryDal.Update(model);
+               //resimleri silmek istersek
+               //DeleteImage.DeleteImagePath(model.Image);
+               //DeleteImage.DeleteImagePath(model.ThumbImage);
+                _categoryDal.Update(model);
+            }
+             
         }
     }
 }

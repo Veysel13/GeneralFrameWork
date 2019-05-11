@@ -20,7 +20,6 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
             //Configuration.AutoDetectChangesEnabled = false;
             Database.SetInitializer<NorthwindContext>(null);
         }
-
         public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -31,6 +30,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
         public DbSet<RootPoint> RootPoints { get; set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<LanguageWord> LanguageWords { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -42,6 +42,7 @@ namespace MyFramework.DataAccess.Concrete.EntityFramework
             modelBuilder.Configurations.Add(new RootPointMap());
             modelBuilder.Configurations.Add(new LanguageMap());
             modelBuilder.Configurations.Add(new LanguageWordMap());
+            modelBuilder.Configurations.Add(new CustomerMap());
             //
         }
     }

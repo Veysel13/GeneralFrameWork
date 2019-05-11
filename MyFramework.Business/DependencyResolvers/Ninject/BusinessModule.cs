@@ -47,6 +47,8 @@ namespace MyFramework.Business.DependencyResolvers.Ninject
             Bind<ILanguageWordService>().To<LanguageWordManager>().InSingletonScope();
             Bind<ILanguageWordDal>().To<EfLanguageWordDal>().InSingletonScope();
 
+            Bind<ICustomerService>().To<CustomerManager>().InSingletonScope();
+            Bind<ICustomerDal>().To<EfCustomerDal>().InSingletonScope();
 
 
             Bind<IFileUploadService>().To<FileUploadManager>().InSingletonScope();

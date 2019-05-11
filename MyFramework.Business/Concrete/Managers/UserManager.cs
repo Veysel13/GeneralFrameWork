@@ -25,7 +25,8 @@ namespace MyFramework.Business.Concrete.Managers
 
         public List<UserRoleItem> GetUserRoleItems(User user)
         {
-          return  _userDal.GetUserRoles(user);
+            List<UserRoleItem> model= _userDal.GetUserRoles(user);
+            return  _userDal.GetUserRoles(user);
         }
     }
 }

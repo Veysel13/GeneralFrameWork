@@ -1,0 +1,27 @@
+﻿@model Customer
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginCard("Müşteri Güncelleme"))
+{
+    using (Html.BeginForm(Url.Action("Update", "Customer"), true))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "w3-text-red" })
+
+        @HtmlComponents.TextInputComponent("CompanyName", "Şirket İsmi",Model.CompanyName)
+        @HtmlComponents.TextInputComponent("ContactName", "Kişi Adı",Model.ContactName)
+        @HtmlComponents.TextInputComponent("ContactTitle", "İletişim Başlığı",Model.ContactTitle)
+        @HtmlComponents.TextInputComponent("Address", "Adres",Model.Address)
+        @HtmlComponents.TextInputComponent("City", "Şehir", Model.City)
+        @HtmlComponents.TextInputComponent("Region", "Bölge", Model.Region)
+        @HtmlComponents.TextInputComponent("PostalCode", "Posta Kodu", Model.PostalCode)
+        @HtmlComponents.TextInputComponent("Country", "Ülke", Model.Country)
+        @HtmlComponents.TextInputComponent("Phone", "Telefon", Model.Phone)
+        @HtmlComponents.TextInputComponent("Fax", "Fax", Model.Fax)
+        @HtmlComponents.HiddenInputComponent("CustomerId", Model.CustomerId)
+        @HtmlComponents.SubmitComponent("Güncelle")
+    }
+
+}

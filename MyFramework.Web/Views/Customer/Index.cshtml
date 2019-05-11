@@ -1,0 +1,27 @@
+﻿@model CustomerListViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginCard("Müşteri Listesi"))
+{
+    @HtmlComponents.NewAddButtonComponent(Url.Action("Create", "Customer"))
+    using (Html.BeginTable(new[] { "Şirket İsmi", "İletişim İsmi", "Şehir", "Telefon", "" }))
+    {
+        foreach (var item in Model.Customers)
+        {
+            <tr>
+                <th>@item.CompanyName</th>
+                <th>@item.ContactName</th>
+                <th>@item.City</th>
+                <th>@item.Phone</th>
+                <th>
+                    @HtmlComponents.DetailButtonComponent(Url.Action("Update", new { id = item.CustomerId }))
+                    @HtmlComponents.DeleteButtonComponent(Url.Action("Delete", new { id = item.CustomerId }))
+                </th>
+            </tr>
+        }
+    }
+}
+
+

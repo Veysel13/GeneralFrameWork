@@ -56,7 +56,25 @@ namespace MyFramework.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
+        public ActionResult Update(int id)
+        {
+            Product product= _productService.GetById(id);
+            ProductAddedViewModel modeladdedviewmodel = new ProductAddedViewModel();
+            modeladdedviewmodel.CategoriesData = new SelectList(_categoryService.GetAll(), "CategoryId", "CategoryName");
+            modeladdedviewmodel.SuppliersData = new SelectList(_supplierService.GetAll(), "SupplierId", "CompanyName");
+            modeladdedviewmodel.Product = product;
+            modeladdedviewmodel.CategoryId = product.CategoryId;
+            modeladdedviewmodel.SupplierId = product.SupplierId;
+            return View(modeladdedviewmodel);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update(Product model)
+        {
+            _productService.Update(model);
+            SuccessNotification("Kayıt Eklendi.");
+            return RedirectToAction("Index");
+        }
         public ActionResult Delete(int id)
         {
             _productService.Delete(id);

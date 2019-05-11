@@ -45,6 +45,7 @@
     <Compile Include="ComplexType\RootPlanDetail.cs" />
     <Compile Include="ComplexType\UserRoleItem.cs" />
     <Compile Include="Concrete\Category.cs" />
+    <Compile Include="Concrete\Customer.cs" />
     <Compile Include="Concrete\Language.cs" />
     <Compile Include="Concrete\LanguageWord.cs" />
     <Compile Include="Concrete\Product.cs" />

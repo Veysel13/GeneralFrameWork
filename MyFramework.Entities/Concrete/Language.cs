@@ -12,5 +12,6 @@ namespace MyFramework.Entities.Concrete
         public virtual int LanguageId { get; set; }
         public virtual string Name { get; set; }
         public virtual string Code { get; set; }
+        public virtual string Image { get; set; }
     }
 }
