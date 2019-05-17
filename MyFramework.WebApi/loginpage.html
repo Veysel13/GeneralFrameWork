@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    <script>
+        function List() {
+            Clear();
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:59101/api/Products",
+                dataType: "json",
+                headers: { Authorization: "Basic " + sessionStorage.getItem("MyToken") },
+                success: function (response) {
+                    console.log("response", response);
+                    if (response) {
+                        $("#errorId").text("");
+                        $.each(response, function (index, value) {
+                            var html = "";
+                            html += "<tr class='data'>";
+                            html += "<td>" + value.FirstName + "</td>";
+                            html += "<td>" + value.LastName + "</td>";
+                            html += "</tr>";
+                            $("table").append(html);
+                        });
+                    }
+                },
+                error: function (err) {
+                    $("#errorId").text(err.status + " " + err.statusText);
+                }
+            });
+        }
+        function Clear() {
+            $(".data").remove();
+        }
+        function Login() {
+            var name = $("#name").val();
+            var pass = $("#pass").val();
+            $.get("http://localhost:59101/api/Logon?userName=" + name + "&password=" + pass, function (result) {
+                sessionStorage.setItem("MyToken", result);
+                alert("Giriş Başarılıdır.");
+                $("#errorId").text("");
+            }).fail(function (err) {
+                console.log(err);
+                $("#errorId").text(err.responseText);
+            });
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="name" value="" /> &nbsp; <input type="password" id="pass" value="" />
+            </td>
+            <td>
+                <button onclick="Login();">
+                    Giriş
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" id="errorId"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button onclick="List();">
+                    Listele
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

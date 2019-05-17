@@ -15,6 +15,10 @@ using System.Web.Http;
 using System.Web.Mvc;
 using MyFramework.Core.CrossCuttingConcerns.Security.Web;
 using MyFramework.Entities.Concrete;
+using MyFramework.WebApi.Models;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http;
 
 namespace MyFramework.WebApi.Controllers
 {
@@ -25,7 +29,28 @@ namespace MyFramework.WebApi.Controllers
         {
             _userService = userService;
         }
-        
-       
+        public HttpResponseMessage Login(string userName,string password)
+        {
+            var user = _userService.GetByUserNameAndPassword(userName, password);
+            if (user !=null)
+            {
+                //1-LogonUser
+                var logonUser = new LogonUser()
+                {
+                    UserName = userName,
+                    Password = password
+                };
+                //2-JsonString
+                var jsonString = JsonConvert.SerializeObject(logonUser);
+                //3-Şifreleme => Token
+                var token =FTH.Extension.Encrypter.Encrypt(jsonString,"159357");
+               return Request.CreateResponse(HttpStatusCode.OK, token);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.Unauthorized, "Kullanıcı Adı ve Şifresi Geçersizdir.");
+            }
+        }
+
     }
 }

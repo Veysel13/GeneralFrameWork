@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-2.2.4.min.js"></script>
+    <script>
+        function List() {
+            Clear();
+            var name = $("#name").val();
+            var pass = $("#pass").val();
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:59101/api/Products",
+                dataType: "json",
+                headers: { Authorization:  btoa(name + ":" + pass) },
+                success: function (response) {
+                    console.log("response", response);
+                    if (response) {
+                        $.each(response, function (index, value) {
+                            var html = "";
+                            html += "<tr class='data'>";
+                            html += "<td>" + value.ProductName + "</td>";
+                            html += "<td>" + value.UnitPrice + "</td>";
+                            html += "</tr>";
+                            $("table").append(html);
+                        });
+                    }
+                },
+                error: function (err) {
+                    alert(err.status + " " + err.statusText);
+                }
+            });
+        }
+        function Clear() {
+            $(".data").remove();
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <input type="text" id="name" value="" />
+            </td>
+            <td>
+                <input type="password" id="pass" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="List();">
+                    Listele
+                </button>
+            </td>
+            <td>
+                <button onclick="Clear();">Temizle</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

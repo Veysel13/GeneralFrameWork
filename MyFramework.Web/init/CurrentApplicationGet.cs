@@ -27,7 +27,7 @@ namespace MyFramework.Web.init
             }
             else
             {
-                var productService = DependencyResolver<IProductService>.Resolve();
+                var productService = InstanceFactory.GetInstance<IProductService>(); 
                 data = productService.GetAll();
                 HttpContext.Current.Application["odalar"] = data;
             }

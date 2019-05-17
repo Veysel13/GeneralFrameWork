@@ -49,7 +49,7 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       //[SecuredOperation(Roles= "Student,Admin")]
+       [SecuredOperation(Roles= "Student,Admin")]
         public List<Product> GetAll()
        {
             // Thread.Sleep(3000);
@@ -124,7 +124,7 @@ namespace MyFramework.Business.Concrete.Managers
           
        }
        [CacheAspect(typeof(MemoryCacheManager))]
-       //[SecuredOperation(Roles ="Student,Admin")]
+       [SecuredOperation(Roles ="Student,Admin")]
         public List<ProductDetail> GetListProductDetails()
        {
           return _productDal.GetProductDetails();
