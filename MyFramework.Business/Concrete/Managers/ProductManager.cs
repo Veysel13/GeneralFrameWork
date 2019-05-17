@@ -49,7 +49,7 @@ namespace MyFramework.Business.Concrete.Managers
        [LogAspect(typeof(DatabaseLogger))]
        [LogAspect(typeof(FileLogger))]
        [PerformanceCounterAspect(2)]
-       [SecuredOperation(Roles= "Student,Admin")]
+       //[SecuredOperation(Roles= "Student,Admin")]
         public List<Product> GetAll()
        {
             // Thread.Sleep(3000);
@@ -87,14 +87,14 @@ namespace MyFramework.Business.Concrete.Managers
         public Product Add(Product product)
         {
             //ValidatorTool.FluentValidation(new ProductValidatior(),product);
-            return _productDal.Add(product);
+            return _mapper.Map<Product>(_productDal.Add(product));
         }
 
-       [FluentValidationAspect(typeof(ProductValidatior))]
+       //[FluentValidationAspect(typeof(ProductValidatior))]
         public Product Update(Product product)
         {
             //ValidatorTool.FluentValidation(new ProductValidatior(), product);
-            return _productDal.Update(product);
+            return _mapper.Map<Product>(_productDal.Update(product));
         }
 
        [TransactionScopeAspect]
@@ -124,7 +124,7 @@ namespace MyFramework.Business.Concrete.Managers
           
        }
        [CacheAspect(typeof(MemoryCacheManager))]
-       [SecuredOperation(Roles ="Student,Admin")]
+       //[SecuredOperation(Roles ="Student,Admin")]
         public List<ProductDetail> GetListProductDetails()
        {
           return _productDal.GetProductDetails();

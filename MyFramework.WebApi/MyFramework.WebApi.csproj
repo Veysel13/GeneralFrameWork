@@ -132,6 +132,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Ninject.Web.Common.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -151,11 +152,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyFramework.Business\MyFramework.Business.csproj">
       <Project>{DBBAF299-D5BD-4090-A07E-268F726579A0}</Project>
       <Name>MyFramework.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyFramework.Core\MyFramework.Core.csproj">
+      <Project>{65CC4C16-213A-4266-9A72-EA256E9CB294}</Project>
+      <Name>MyFramework.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\MyFramework.Entities\MyFramework.Entities.csproj">
       <Project>{0572EF84-09F7-47AD-874D-1DA3030DD01F}</Project>
