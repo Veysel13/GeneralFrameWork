@@ -10,7 +10,7 @@ namespace MyFramework.Web.Models.ViewModel
     public class ProductListViewModel
     {
         public List<ProductDetail> Products { get; set; }
-       
-        
+        public object PageingInfo { get; set; }
+
     }
 }

@@ -15,7 +15,7 @@ namespace MyFramework.WebApi
             config.MessageHandlers.Add(new AuthenticationHandler());
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

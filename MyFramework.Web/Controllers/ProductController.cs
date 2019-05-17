@@ -30,11 +30,23 @@ namespace MyFramework.Web.Controllers
             _categoryService = categoryService;
             _supplierService = supplierService;
         }
-      
-        public ActionResult Index()
+
+        public int PageSize = 5;
+        public ActionResult Index(int page = 1, int category = 0)
         {
-            var model = new ProductListViewModel();
-            model.Products = _productService.GetListProductDetails().Where(x=>x.Discontinued==true).ToList();
+            var data = _productService.GetListProductDetails().Where(x => x.Discontinued == true).Where(p => p.CategoryId == category || category == 0).ToList();
+            var model = new ProductListViewModel()
+            {
+                Products = data.Skip((page - 1) * PageSize).Take(PageSize).ToList(),
+                PageingInfo = new PageingInfo
+                {
+                    ItemsPerPage = PageSize,
+                    TotalItems = data.Count,
+                    CurrentPage = page,
+                    CurrentCategory = category
+                }
+
+            };
             return View(model);
         }
 

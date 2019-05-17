@@ -9,7 +9,8 @@ using NHibernate.Type;
 
 namespace MyFramework.Core.CrossCuttingConcerns.Caching.Microsoft
 {
-   public class MemoryCacheManager:ICacheManager
+    // System.Runtime.Caching paketini nuget den indiriyoruz
+    public class MemoryCacheManager:ICacheManager
     {
         protected ObjectCache Cache => MemoryCache.Default;
 

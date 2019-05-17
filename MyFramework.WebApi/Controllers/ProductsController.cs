@@ -27,9 +27,30 @@ namespace MyFramework.WebApi.Controllers
             _productService = productService;
         }
 
+        [HttpGet]
         public List<Product> Get()
         {
             return _productService.GetAll();
         }
+        //[Route("{id:int:range(1,10)}", Name = "GetById")]
+        [HttpGet]
+        public Product Get(int id)
+        {
+            return _productService.GetById(id);
+        }
+
+        [HttpPost]
+        public HttpResponseMessage Post([FromBody]Product product)
+        {
+            _productService.Add(product);
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created);
+           // response.Headers.Location=new Uri("/api/Employee");
+            //response.Headers.Location = new Uri(Request.RequestUri+"/" + emp.Id.ToString());
+            //işlem sonucu yönlecegi adresi yazıyoruz
+            response.Headers.Location = new Uri(Url.Link("Get","Product"));
+            return response;
+        }
+
+
     }
 }

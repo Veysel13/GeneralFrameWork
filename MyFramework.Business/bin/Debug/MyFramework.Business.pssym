@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="387" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="383" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.LogAspects.LogAspect">
-    <Instance Declaration="#2=A:MyFramework.Business" Id="87fef41685fb95ef">
+    <Instance Declaration="#2=A:MyFramework.Business" Id="87fef4166f80f2c3">
       <Target Target="#3=M:[MyFramework.Business]MyFramework.Business.Concrete.Managers.ProductManager::GetAll()">
         <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="17" />
       </Target>
@@ -162,7 +162,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="390" />
       </Target>
     </Instance>
-    <Instance Declaration="#2" Id="87fef41691571564">
+    <Instance Declaration="#2" Id="87fef416b29ec760">
       <Target Target="#3">
         <JoinPoint Advising="#1" Description="#4" Ordinal="13" />
       </Target>
@@ -323,7 +323,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="391" />
       </Target>
     </Instance>
-    <Instance Declaration="#57=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.CategoryManager" Id="87fef416bbe5a318">
+    <Instance Declaration="#57=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.CategoryManager" Id="87fef4160dd918ee">
       <Target Target="#7">
         <JoinPoint Advising="#1" Description="#4" Ordinal="140" />
       </Target>
@@ -343,7 +343,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="133" />
       </Target>
     </Instance>
-    <Instance Declaration="#57" Id="87fef416f2484229">
+    <Instance Declaration="#57" Id="87fef416b94f400e">
       <Target Target="#7">
         <JoinPoint Advising="#1" Description="#4" Ordinal="139" />
       </Target>
@@ -363,7 +363,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="127" />
       </Target>
     </Instance>
-    <Instance Declaration="#58=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.RootPlanManager" Id="87fef416e90857ae">
+    <Instance Declaration="#58=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.RootPlanManager" Id="87fef416b0baee24">
       <Target Target="#13">
         <JoinPoint Advising="#1" Description="#4" Ordinal="231" />
       </Target>
@@ -386,7 +386,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="205" />
       </Target>
     </Instance>
-    <Instance Declaration="#58" Id="87fef4160162dfeb">
+    <Instance Declaration="#58" Id="87fef416da148b0c">
       <Target Target="#13">
         <JoinPoint Advising="#1" Description="#4" Ordinal="230" />
       </Target>
@@ -409,7 +409,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="199" />
       </Target>
     </Instance>
-    <Instance Declaration="#59=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.RootPointManager" Id="87fef4168337578e">
+    <Instance Declaration="#59=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.RootPointManager" Id="87fef416dd098cef">
       <Target Target="#38">
         <JoinPoint Advising="#1" Description="#4" Ordinal="336" />
       </Target>
@@ -432,7 +432,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="378" />
       </Target>
     </Instance>
-    <Instance Declaration="#59" Id="87fef4160131bebd">
+    <Instance Declaration="#59" Id="87fef416afa81b35">
       <Target Target="#38">
         <JoinPoint Advising="#1" Description="#4" Ordinal="330" />
       </Target>
@@ -455,7 +455,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="372" />
       </Target>
     </Instance>
-    <Instance Declaration="#60=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.SupplierManager" Id="87fef416f1f149b0">
+    <Instance Declaration="#60=T:[MyFramework.Business]MyFramework.Business.Concrete.Managers.SupplierManager" Id="87fef416ded7186d">
       <Target Target="#6">
         <JoinPoint Advising="#1" Description="#4" Ordinal="73" />
       </Target>
@@ -475,7 +475,7 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="83" />
       </Target>
     </Instance>
-    <Instance Declaration="#60" Id="87fef41695616cde">
+    <Instance Declaration="#60" Id="87fef416776b3d29">
       <Target Target="#6">
         <JoinPoint Advising="#1" Description="#4" Ordinal="74" />
       </Target>
@@ -495,29 +495,29 @@
         <JoinPoint Advising="#1" Description="#4" Ordinal="77" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef4161a950e43">
+    <Instance Declaration="#3" Id="87fef416fdf1cfcc">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="14" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef4165fa6358c">
+    <Instance Declaration="#3" Id="87fef416a8670ab9">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="15" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="87fef41693d7c952">
+    <Instance Declaration="#5" Id="87fef416fca236eb">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="29" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="87fef416d9a29fac">
+    <Instance Declaration="#6" Id="87fef4169f61b396">
       <Target>
         <JoinPoint Advising="#1" Description="#4" Ordinal="68" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#61=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.PerformanceAspects.PerformanceCounterAspect">
-    <Instance Declaration="#2" Id="87fef416a24fe1df">
+    <Instance Declaration="#2" Id="87fef4163262f313">
       <Target Target="#3">
         <JoinPoint Advising="#61" Description="#4" Ordinal="16" />
       </Target>
@@ -705,177 +705,177 @@
         <JoinPoint Advising="#61" Description="#4" Ordinal="387" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef416985174d4">
+    <Instance Declaration="#3" Id="87fef416e50471cf">
       <Target>
         <JoinPoint Advising="#61" Description="#4" Ordinal="9" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#71=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
-    <Instance Declaration="#7" Id="87fef4166413fa9b">
+    <Instance Declaration="#7" Id="87fef41697195937">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="137" />
       </Target>
     </Instance>
-    <Instance Declaration="#8" Id="87fef416a32facfa">
+    <Instance Declaration="#8" Id="87fef4167953a5d4">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="146" />
       </Target>
     </Instance>
-    <Instance Declaration="#9" Id="87fef416f6b13994">
+    <Instance Declaration="#9" Id="87fef41671ac5b79">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="179" />
       </Target>
     </Instance>
-    <Instance Declaration="#10" Id="87fef416e85f4c0b">
+    <Instance Declaration="#10" Id="87fef4165e1ab81a">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="186" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="87fef4163250be1a">
+    <Instance Declaration="#5" Id="87fef416d4e94b12">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="25" />
       </Target>
     </Instance>
-    <Instance Declaration="#11" Id="87fef416652b933b">
+    <Instance Declaration="#11" Id="87fef4160deba713">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="32" />
       </Target>
     </Instance>
-    <Instance Declaration="#12" Id="87fef41634dd1ae4">
+    <Instance Declaration="#12" Id="87fef416f43efd2d">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="37" />
       </Target>
     </Instance>
-    <Instance Declaration="#13" Id="87fef4165f34a407">
+    <Instance Declaration="#13" Id="87fef416ddacd77f">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="228" />
       </Target>
     </Instance>
-    <Instance Declaration="#14" Id="87fef416e4a4b8e2">
+    <Instance Declaration="#14" Id="87fef4164a3c25be">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="237" />
       </Target>
     </Instance>
-    <Instance Declaration="#15" Id="87fef416e3b50d5e">
+    <Instance Declaration="#15" Id="87fef416adba1e93">
       <Target>
         <JoinPoint Advising="#71" Description="#4" Ordinal="87" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#72=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheRemoveAspect">
-    <Instance Declaration="#7" Id="87fef416374e8f8c">
+    <Instance Declaration="#7" Id="87fef4169804fa55">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="136" />
       </Target>
     </Instance>
-    <Instance Declaration="#8" Id="87fef416e084e0f4">
+    <Instance Declaration="#8" Id="87fef416e1f9ae5e">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="145" />
       </Target>
     </Instance>
-    <Instance Declaration="#16" Id="87fef4162a161c35">
+    <Instance Declaration="#16" Id="87fef41635dd98da">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="152" />
       </Target>
     </Instance>
-    <Instance Declaration="#9" Id="87fef4165a53f47a">
+    <Instance Declaration="#9" Id="87fef416a61bd8bd">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="181" />
       </Target>
     </Instance>
-    <Instance Declaration="#10" Id="87fef416d62a6c44">
+    <Instance Declaration="#10" Id="87fef416e4222c1f">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="188" />
       </Target>
     </Instance>
-    <Instance Declaration="#17" Id="87fef416f15425a7">
+    <Instance Declaration="#17" Id="87fef416015b0ead">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="194" />
       </Target>
     </Instance>
-    <Instance Declaration="#18" Id="87fef4164a469c52">
+    <Instance Declaration="#18" Id="87fef4169a92b3c2">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="274" />
       </Target>
     </Instance>
-    <Instance Declaration="#19" Id="87fef41603fb5f0e">
+    <Instance Declaration="#19" Id="87fef41604328d9a">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="280" />
       </Target>
     </Instance>
-    <Instance Declaration="#20" Id="87fef4162b1c51be">
+    <Instance Declaration="#20" Id="87fef416bbc5d0e0">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="322" />
       </Target>
     </Instance>
-    <Instance Declaration="#5" Id="87fef41606dae9c6">
+    <Instance Declaration="#5" Id="87fef4160ad672cf">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="23" />
       </Target>
     </Instance>
-    <Instance Declaration="#21" Id="87fef4168b65e3c4">
+    <Instance Declaration="#21" Id="87fef416164e5332">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="51" />
       </Target>
     </Instance>
-    <Instance Declaration="#13" Id="87fef4168acb0be6">
+    <Instance Declaration="#13" Id="87fef4164ed26afe">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="227" />
       </Target>
     </Instance>
-    <Instance Declaration="#14" Id="87fef416e3d9e436">
+    <Instance Declaration="#14" Id="87fef4168d5b55e1">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="236" />
       </Target>
     </Instance>
-    <Instance Declaration="#22" Id="87fef41677058bca">
+    <Instance Declaration="#22" Id="87fef4168dd73527">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="243" />
       </Target>
     </Instance>
-    <Instance Declaration="#15" Id="87fef41610bc4ba9">
+    <Instance Declaration="#15" Id="87fef41651704eba">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="86" />
       </Target>
     </Instance>
-    <Instance Declaration="#23" Id="87fef416c70f9316">
+    <Instance Declaration="#23" Id="87fef416b807afce">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="93" />
       </Target>
     </Instance>
-    <Instance Declaration="#24" Id="87fef41695907db7">
+    <Instance Declaration="#24" Id="87fef416af5542b3">
       <Target>
         <JoinPoint Advising="#72" Description="#4" Ordinal="101" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#73=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation">
-    <Instance Declaration="#3" Id="87fef416ae67284e">
+    <Instance Declaration="#3" Id="87fef416e24520a0">
       <Target>
         <JoinPoint Advising="#73" Description="#4" Ordinal="10" />
       </Target>
     </Instance>
-    <Instance Declaration="#25" Id="87fef4167b290db3">
+    <Instance Declaration="#25" Id="87fef41669827d36">
       <Target>
         <JoinPoint Advising="#73" Description="#4" Ordinal="44" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#74=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
-    <Instance Declaration="#12" Id="87fef416fd46192c">
+    <Instance Declaration="#12" Id="87fef4161077f6c3">
       <Target>
         <JoinPoint Advising="#74" Description="#4" Ordinal="39" />
       </Target>
     </Instance>
-    <Instance Declaration="#21" Id="87fef41642f402d3">
+    <Instance Declaration="#21" Id="87fef4164ea2db98">
       <Target>
         <JoinPoint Advising="#74" Description="#4" Ordinal="53" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#75=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.ExceptionAspects.ExceptionLogAspect">
-    <Instance Declaration="#2" Id="87fef416df0e9d7e">
+    <Instance Declaration="#2" Id="87fef41625bf697b">
       <Target Target="#3">
         <JoinPoint Advising="#75" Description="#76=Wrapped by advice(s) OnException" Ordinal="11" />
       </Target>
@@ -1063,7 +1063,7 @@
         <JoinPoint Advising="#75" Description="#76" Ordinal="389" />
       </Target>
     </Instance>
-    <Instance Declaration="#2" Id="87fef41690649f4e">
+    <Instance Declaration="#2" Id="87fef416ebb715dc">
       <Target Target="#3">
         <JoinPoint Advising="#75" Description="#76" Ordinal="8" />
       </Target>
@@ -1253,62 +1253,62 @@
     </Instance>
   </Class>
   <Class Class="#77=T:[MyFramework.Core]MyFramework.Core.Aspects.Postsharp.CacheAspects.CacheAspect">
-    <Instance Declaration="#26" Id="87fef41610a835a5">
+    <Instance Declaration="#26" Id="87fef416a9826a92">
       <Target>
         <JoinPoint Advising="#77" Description="#78=Intercepted by OnInvoke" Ordinal="122" />
       </Target>
     </Instance>
-    <Instance Declaration="#27" Id="87fef41681f173a1">
+    <Instance Declaration="#27" Id="87fef416ddb77c0d">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="170" />
       </Target>
     </Instance>
-    <Instance Declaration="#28" Id="87fef41685154753">
+    <Instance Declaration="#28" Id="87fef4161d026de7">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="264" />
       </Target>
     </Instance>
-    <Instance Declaration="#29" Id="87fef4169c4404f9">
+    <Instance Declaration="#29" Id="87fef416630398d8">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="305" />
       </Target>
     </Instance>
-    <Instance Declaration="#30" Id="87fef4165861c0e4">
+    <Instance Declaration="#30" Id="87fef416ee0f886d">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="311" />
       </Target>
     </Instance>
-    <Instance Declaration="#31" Id="87fef41682adf7ea">
+    <Instance Declaration="#31" Id="87fef416da900077">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="317" />
       </Target>
     </Instance>
-    <Instance Declaration="#3" Id="87fef416a37360bc">
+    <Instance Declaration="#3" Id="87fef4167c4bf773">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="12" />
       </Target>
     </Instance>
-    <Instance Declaration="#25" Id="87fef4164bc0b81c">
+    <Instance Declaration="#25" Id="87fef416a2b15fe1">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="47" />
       </Target>
     </Instance>
-    <Instance Declaration="#32" Id="87fef416436d2188">
+    <Instance Declaration="#32" Id="87fef41648a552f7">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="212" />
       </Target>
     </Instance>
-    <Instance Declaration="#33" Id="87fef416ff846316">
+    <Instance Declaration="#33" Id="87fef4166c83f9ce">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="220" />
       </Target>
     </Instance>
-    <Instance Declaration="#34" Id="87fef41625cdb11f">
+    <Instance Declaration="#34" Id="87fef4165ba9b5d6">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="254" />
       </Target>
     </Instance>
-    <Instance Declaration="#6" Id="87fef416d91d5f01">
+    <Instance Declaration="#6" Id="87fef416fd854f72">
       <Target>
         <JoinPoint Advising="#77" Description="#78" Ordinal="72" />
       </Target>

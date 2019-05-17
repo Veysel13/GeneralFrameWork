@@ -14,5 +14,6 @@ namespace MyFramework.Entities.ComplexType
         public virtual string CategoryName { get; set; }
         public virtual string CompanyName { get; set; }
         public virtual bool Discontinued { get; set; }
+        public virtual int CategoryId { get; set; }
     }
 }

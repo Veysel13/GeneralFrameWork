@@ -29,19 +29,12 @@ namespace MyFramework.Web.Controllers
         public ActionResult ChangeCulture(string dilId, string lang, string returnUrl)
         {
            
-            var cookie = HttpContext.Request.Cookies["culture"];
-            cookie = new HttpCookie("culture");
-            cookie.HttpOnly = false;
-            cookie.Value = lang;
-            cookie.Expires = DateTime.Now.AddYears(1);
-            HttpContext.Response.Cookies.Add(cookie);
-            Session["language"] = lang;
-            //HttpContext.Response.Cookies.Add(new HttpCookie("culture", lang));
-            //Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
-            //Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(lang);
-            CultureInfo Culture = new System.Globalization.CultureInfo(lang);
-            Thread.CurrentThread.CurrentCulture = Culture;
-            Thread.CurrentThread.CurrentUICulture = Culture;
+            var cookie = HttpContext.Request.Cookies["language"];
+            Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(lang);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(lang.ToLower());
+            HttpCookie LangCookie = new HttpCookie("language");
+            LangCookie.Value = lang;
+            Response.Cookies.Add(LangCookie);
 
             return Redirect(returnUrl);
         }

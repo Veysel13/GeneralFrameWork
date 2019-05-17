@@ -20,6 +20,8 @@ namespace MyFramework.WebApi.MessageHandler
         {
             try
             {
+                //Header degeri olarak
+                //key=Authorization value=dmV5c2VsOjEyMzQ1Ng==(base64 encode değeri)
                 var token = request.Headers.GetValues("Authorization").FirstOrDefault();
                 if (token !=null)
                 {

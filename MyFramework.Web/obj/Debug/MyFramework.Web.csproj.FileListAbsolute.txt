@@ -382,3 +382,10 @@ D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.pdb
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.IO.FileSystem.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.IO.FileSystem.Primitives.dll
 D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\roslyn\System.Collections.Immutable.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\tr-TR\MyFramework.Web.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\bin\en-US\MyFramework.Web.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\tr-TR\MyFramework.Web.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\en-US\MyFramework.Web.resources.dll
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.Resources.reso.resources
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.Resources.reso.tr-TR.resources
+D:\Visualstudio\GeneralFrameWork\MyFramework.Web\obj\Debug\MyFramework.Web.Resources.reso.en-US.resources

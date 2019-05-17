@@ -17,7 +17,42 @@
                     @HtmlComponents.DeleteButtonComponent(Url.Action("Delete", new { id = item.ProductId }))
                 </th>
             </tr>
-
         }
+
+        @*<div class="pagerim">
+            @Html.Pager(Model.PageingInfo as PageingInfo)
+        </div>*@
     }
+}
+
+@section css{
+    <style>
+        .pagerim {
+            position: absolute;
+            right: 20%;
+        }
+
+        .pagerim a {
+            margin-left: 10px;
+            font-size: 15px;
+            color: black
+        }
+
+        .pagerim .selected {
+            color: white;
+            background-color: black;
+            padding: 3px;
+        }
+
+        h3, h4 {
+            color: black;
+            font-weight: bold;
+        }
+
+        .item form input[type=submit] {
+            margin-left: 80%;
+            background-color: black;
+            color: white;
+        }
+    </style>
 }

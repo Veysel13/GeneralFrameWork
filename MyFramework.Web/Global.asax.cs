@@ -24,6 +24,27 @@ namespace MyFramework.Web
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule(),new AutoMapperModule()));
         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+            HttpCookie LangCookie = Request.Cookies["language"];
+            if (LangCookie != null && LangCookie.Value != null)
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture =
+                    new System.Globalization.CultureInfo(LangCookie.Value);
+                System.Threading.Thread.CurrentThread.CurrentUICulture =
+                    new System.Globalization.CultureInfo(LangCookie.Value);
+            }
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("tr-TR");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("tr-TR");
+            }
+        }
+
+
+
+
         //IUdentity nesnesının ulasılabılır olması ıcın 
         public override void Init()
         {
